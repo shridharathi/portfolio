@@ -1,9 +1,20 @@
 const WORK = [
   {
     name: 'FLORA: Styles',
-    images: ['loraas.png'],
+    images: ['loras.png'],
     description:
-      '<p>FLORA is building the ultimate orchestration layer to plug and play with all the latest AI models. </br> </br> I took lead on the company\'s mobile landing page which features the use of a realtime AI filter where users can transform their face by typing their own prompts. This is done through a Stream Diffusion pipeline hosted on a Modal container in the backend.</p>',
+      '<p>FLORA is the ultimate orchestration layer to plug and play with all the latest AI models. </br> </br>I built styles into the product, allowing users to do style transfers on images using Flux LoRAs. This project involved creating a custom pipeline to load/unload Flux LoRAs on a Modal container along with creating UI components to select and upload LoRAs.</br> <br> Above showcases the styles "Tarot Card", "Victorian Drawing", "Watercolor", "Studio Ghibli", "Retrofuturism", "Pixar", and "Pixel". </br></p>',
+    stack: 'React • JavaScript • HTML/CSS • Modal • Python',
+    summary:
+      'FLORA is an infinite AI canvas - I made their landing page and am working as a backend engineer',
+    date: '04.2024',
+    link: 'https://florafauna.ai',
+  },
+  {
+    name: 'FLORA: Mobile',
+    images: ['landing.gif', 'loading.gif', 'minecraft.gif'],
+    description:
+      '<p> I took lead on developing FLORA\'s mobile landing page which features a realtime AI filter where users can transform their face by typing their own prompts. This is done through a Stream Diffusion pipeline hosted on a Modal container in the backend.</p>',
     stack: 'React • JavaScript • HTML/CSS • PostgreSQL • Modal • Python',
     summary:
       'FLORA is an infinite AI canvas - I made their landing page and am working as a backend engineer',
@@ -20,6 +31,17 @@ const WORK = [
       'Autolabeling technology for CAD files uploaded to the Autodesk Viewer.',
     date: '04.2024',
     link: 'https://medium.com/@shridharathi/employing-pretrained-vision-and-language-models-to-auto-label-cad-files-d872cad2299a/',
+  },
+  {
+    name: 'Room Genius',
+    images: ['room_genius.png'],
+    description:
+      '<p>AI Interior Design app which also finds products on Amazon. 30k+ users, 2k+ MRR.</p>',
+    stack: 'React • PostgreSQL • Supabase • Stripe • Figma',
+    summary:
+      'AI Interior Design app which also finds products on Amazon. 30k+ users, 2k+ MRR.',
+    date: '06.2024',
+    link: 'tryroomgenius.com',
   },
   {
     name: 'Vibeify',
