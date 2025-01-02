@@ -71,3 +71,45 @@ Follow these steps to set up the project locally.
 ### Building for Production
 
 To create an optimized production build, run:
+bash
+npm run build
+_Or with Yarn:_
+bash
+yarn build
+The build artifacts will be stored in the `build/` directory.
+
+### Deployment
+
+You can deploy the production build to any static site hosting service like Vercel, Netlify, or GitHub Pages.
+
+**Example Deployment with GitHub Pages:**
+
+1. **Install `gh-pages`**
+
+   ```bash
+   npm install --save gh-pages
+   ```
+
+2. **Add the Following Scripts to `package.json`**
+
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+
+3. **Deploy the App**
+
+   ```bash
+   npm run deploy
+   ```
+
+## Contact
+
+- **Email:** [shriathi@stanford.alumni.edu](mailto:shriathi@stanford.alumni.edu)
+- **LinkedIn:** [Shridhar Athinarayanan](https://www.linkedin.com/in/shridhar-athinarayanan-638493199/)
+- **GitHub:** [shridharathi](https://github.com/shridharathi)
+- **Medium:** [@shridharathi](https://medium.com/@shridharathi)
+
+Feel free to reach out for collaborations, questions, or just a friendly hello!
