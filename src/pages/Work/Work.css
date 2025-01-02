@@ -1,0 +1,257 @@
+.description {
+  padding-top: 3vh;
+  padding-bottom: 1vh;
+  width: 100%;
+}
+
+.stack {
+  color: #3d3d3dad;
+}
+
+.experience-container {
+  padding-right: 1vw;
+}
+
+.bio {
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-bottom: 1.2vh;
+}
+
+.school {
+  font-size: 1rem;
+  font-weight: 4000;
+  padding-bottom: 0.5vh;
+}
+
+.school-degrees {
+  font-size: 0.8rem;
+  font-weight: 4000;
+  padding-bottom: 0.5vh;
+  color: #3d3d3d;
+}
+
+.section-header {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.projects-header {
+  padding-bottom: 1vh;
+  border-bottom: 1px solid black;
+}
+
+.pt-5 {
+  padding-top: 5vh;
+}
+
+.pt-6 {
+  padding-top: 6vh;
+}
+
+.project-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  justify-content: center;
+  border-collapse: collapse; /* Add this line */
+  padding: 1vh 0;
+  border-bottom: 1px solid black;
+  margin-bottom: 2vh;
+}
+
+.project-links p {
+  padding-bottom: 2px;
+  transition: all 0.25s ease;
+}
+
+.project-links p:hover,
+.selected-project {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: bolder;
+}
+
+.project-images {
+  transition: all 0.25s ease;
+  display: flex;
+  width: 100%;
+}
+
+.project-images:hover {
+  opacity: 0.7;
+}
+
+.project-images img {
+  max-height: 420px;
+  padding-right: 1vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-heading {
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  padding-top: 3vh;
+}
+
+.project-info {
+  display: flex;
+  align-items: baseline; /* Align items vertically in the center */
+}
+
+.project-info p {
+  margin-right: 20px; /* Add spacing between the name and stack */
+}
+
+.project-experience:hover {
+  cursor: pointer;
+}
+
+.project-experience:hover {
+  color: var(--accent);
+}
+.project-experience:hover a {
+  color: var(--accent) !important;
+}
+
+.mobile-project-info {
+  display: none;
+  padding-top: 1.5vh;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-project-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-links,
+  .projects-container {
+    display: none;
+  }
+  .work .sidebar-container {
+    border-top: none;
+  }
+  .project-images {
+    width: 95%;
+  }
+  .project-experience:hover {
+    color: black;
+    cursor: auto;
+  }
+  .project-experience:hover a {
+    color: black !important;
+  }
+}
+
+.experience-description {
+  font-size: 0.9rem;
+  color: #3d3d3d;
+  font-weight: normal;
+}
+
+.experience-dates {
+  color: #3d3d3d;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.experience-position {
+  color: var(--body-grey);
+  padding-bottom: 0.4vw;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+}
+p,
+ul {
+  margin: 0;
+}
+
+.experience-position {
+  color: var(--body-grey);
+  padding-bottom: 0.4vw;
+}
+
+.intro-container {
+  padding-top: 3vh;
+  overflow: auto;
+  position: fixed;
+  top: calc(5vh + 51px);
+  left: calc(33% + 3.6vw);
+  right: 2.2vw;
+  bottom: 0;
+}
+
+.about-intro-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.pic {
+  width: 40%;
+  object-fit: cover;
+  padding-right: 0vw;
+  object-position: 70%;
+}
+
+.contact {
+  padding-top: 3vh;
+}
+.contact a {
+  padding-right: 2vw;
+}
+.intro-container a,
+.contact a {
+  color: var(--body-grey);
+  text-decoration: underline;
+}
+.heading a {
+  color: rgb(0, 0, 0);
+}
+.info-section {
+  display: flex;
+  margin-bottom: 5vh;
+  align-items: center;
+}
+.info-section img {
+  height: 40vh;
+  width: 40vh;
+  object-fit: cover;
+  object-position: 70%;
+  padding-left: 2vw;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    display: flex;
+    overflow: auto;
+    position: fixed;
+    top: calc(5vh + 51px);
+    bottom: 0;
+    flex-direction: column;
+  }
+  .about .intro-container {
+    order: 2;
+  }
+  .about .sidebar-container {
+    order: 1;
+  }
+  .intro-container.about-intro-container {
+    width: 90%;
+    flex-direction: column;
+  }
+  .info-section {
+    flex-direction: column;
+  }
+  .pic {
+    width: 100%;
+    padding-bottom: 5vh;
+  }
+}

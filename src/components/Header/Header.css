@@ -1,0 +1,59 @@
+@import url(https://db.onlinewebfonts.com/c/c694bf4d912ab7e408892e78151645d8?family=Consolas+W01+Bold);
+header {
+  width: 100%;
+  height: 50px;
+  padding: 1.5vh 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.titles {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.5vh;
+}
+.name {
+  font-family: "Consolas", monospace;
+  font-size: 1.3rem;
+  padding-right: 3vw;
+  margin: 0;
+  display: flex; /* Use flexbox to align items horizontally */
+}
+.title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+  color: var(--accent);
+  text-transform: capitalize;
+}
+.name a {
+  color: rgb(0, 0, 0);
+}
+
+.links {
+  display: flex;
+}
+
+.links a {
+  margin-right: 18px; /* Add margin between icons */
+}
+
+header a {
+  text-decoration: none;
+}
+.nav-container {
+  display: flex;
+}
+.nav-container a {
+  color: var(--body-grey);
+  padding-right: 2vw;
+  font-size: 1.2rem;
+}
+
+.nav-container a:hover,
+.active {
+  color: var(--accent);
+}

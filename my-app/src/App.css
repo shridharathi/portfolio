@@ -1,0 +1,38 @@
+@import url(https://db.onlinewebfonts.com/c/a8d23046bc8d38ee78b38e95ec47f9e5?family=Franklin+Gothic+Medium);
+@import url(https://db.onlinewebfonts.com/c/e130d119682ecb567748343bf7f263b0?family=Franklin+Gothic+Book);
+@import url(https://db.onlinewebfonts.com/c/45a9841a7f5ba7a780f0a804553cfce7?family=Franklin+Gothic+Medium+V2);
+@import url(https://db.onlinewebfonts.com/c/66110dea1155f464a60f6567e97e6e8c?family=Franklin+Gothic%2A+Demi);
+
+:root {
+  --dark-grey: #434343;
+  --body-grey-lighter: #8b949d;
+  --body-grey: #868a8ead;
+  --accent: #1500ff;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+  width: 100%;
+  background-color: #f9f7f4;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.body {
+  width: 95%;
+  margin: 0vh auto;
+  top: 0;
+  left: 0;
+  padding-top: 2vh;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
