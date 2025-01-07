@@ -41,7 +41,7 @@ const WORK = [
     summary:
       'AI Interior Design app which also finds products on Amazon. 30k+ users, 2k+ MRR.',
     date: '06.2024',
-    link: 'tryroomgenius.com',
+    link: 'https://tryroomgenius.com',
   },
   {
     name: 'Vibeify',
