@@ -18,8 +18,8 @@ export default function Work() {
       >
         <div className="description projects-header">
           <p className="bio">
-            I'm an AI product engineer passionate about
-             user-centric design and data-driven development.
+            I'm a software engineer passionate about
+             AI product, data science, and creative tech.
           </p>
           <br />
           <p className='school'> Stanford University<br /></p>
