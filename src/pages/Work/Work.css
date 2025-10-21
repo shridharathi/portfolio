@@ -83,7 +83,7 @@
 }
 
 .project-images img {
-  max-height: 420px;
+  max-height: 560px;
   padding-right: 1vh;
   object-fit: cover;
   width: 100%;

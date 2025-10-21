@@ -32,17 +32,17 @@ const WORK = [
     date: '04.2024',
     link: 'https://medium.com/@shridharathi/employing-pretrained-vision-and-language-models-to-auto-label-cad-files-d872cad2299a/',
   },
-  {
-    name: 'Room Genius',
-    images: ['room_genius.png'],
-    description:
-      '<p>AI Interior Design app which also finds products on Amazon. 30k+ users, 2k+ MRR.</p>',
-    stack: 'React • PostgreSQL • Supabase • Stripe • Figma',
-    summary:
-      'AI Interior Design app which also finds products on Amazon. 30k+ users, 2k+ MRR.',
-    date: '06.2024',
-    link: 'https://tryroomgenius.com',
-  },
+  //{
+  //  name: 'Room Genius',
+    //images: ['room_genius.png'],
+    //description:
+      //'<p>AI Interior Design app which also finds products on Amazon. 30k+ users, 2k+ MRR.</p>',
+    //stack: 'React • PostgreSQL • Supabase • Stripe • Figma',
+    //summary:
+      //'AI Interior Design app which also finds products on Amazon. 30k+ users, 2k+ MRR.',
+    //date: '06.2024',
+    //link: 'https://tryroomgenius.com',
+  //},
   {
     name: 'Vibeify',
     images: ['vibeify.png'],
@@ -55,17 +55,17 @@ const WORK = [
     link: 'https://github.com/shridharathi/vibeify',
   },
 
-  {
-    name: 'URL Chatbot',
-    images: ['url.png'],
-    description:
-      '<p>Chat/query on text from any URL you want to upload. </br></br> This webapp was an exploration in self-implementing Retrival Augmented Generation (RAG) technology. The backend scrapes the text in the URL, chunks the text, embeds the chunks using OpenAI embeddings, and stores the embeddings in Pinecone. Then, the user can query about content in the webpage; this query is constructed into a prompt for GPT-4, and a similarity search is conducted within the Pinecone database to retreive the most relevant information/answer. </p>',
-    stack: 'Streamlit • FastAPI • Pinecone • OpenAI',
-    summary:
-      'Chat/query on text from any URL you want to upload',
-    date: '01.2024',
-    link: 'https://github.com/shridharathi/rag-llm-chatbot',
-  },
+  //{
+  //  name: 'URL Chatbot',
+  //  images: ['url.png'],
+  //  description:
+  //    '<p>Chat/query on text from any URL you want to upload. </br></br> This webapp was an exploration in self-implementing Retrival Augmented Generation (RAG) technology. The backend scrapes the text in the URL, chunks the text, embeds the chunks using OpenAI embeddings, and stores the embeddings in Pinecone. Then, the user can query about content in the webpage; this query is constructed into a prompt for GPT-4, and a similarity search is conducted within the Pinecone database to retreive the most relevant information/answer. </p>',
+  //  stack: 'Streamlit • FastAPI • Pinecone • OpenAI',
+  //  summary:
+  //    'Chat/query on text from any URL you want to upload',
+  //  date: '01.2024',
+  //  link: 'https://github.com/shridharathi/rag-llm-chatbot',
+  //},
 
   {
     name: 'Art Classifier',
@@ -91,7 +91,7 @@ const WORK = [
     link: 'https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1224/reports/custom_116978375.pdf',
   },
   {
-    name: 'Pune Water Distribution',
+    name: 'Pune Water',
     images: ['pune.png', 'pune2.png'],
     stack: 'Python • pandas • OpenCV • ArcGIS • Illustrator API',
     description:

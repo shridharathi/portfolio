@@ -1,11 +1,23 @@
 const EXPERIENCE = [
   {
-    name: 'FLORA AI',
+    name: 'Replicate',
     dates: {
-      start: '08.2024'
+      start: '03.2025',
     },
     description:
-      'Shipping AI tools for creatives.',
+      'Shipping the latest AI models and tools to the community.',
+       
+    position: 'AI Engineer',
+    link: "https://www.replicate.com",
+  },
+  {
+    name: 'FLORA AI',
+    dates: {
+      start: '08.2024',
+      end: '12.2024',
+    },
+    description:
+      'AI tools for creatives.',
        
     position: 'AI Product Engineer',
     link: "https://www.florafauna.ai/",
@@ -54,28 +66,6 @@ const EXPERIENCE = [
       'Geo-referenced and stitched 550+ raw pipe vector PDF files to digitize the entire water distribution system of Pune, India. (Presented @ American Geophysical Union 2020 conference)',
     position: 'Data Science Intern',
     link: 'https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/735906',
-  },
-  {
-    name: 'Breakout Mentors',
-    dates: {
-      start: '03.2023',
-      end: '09.2023',
-    },
-    description:
-      "Crafted course material and provided 1:1 instruction on statistical learning concepts using numpy, pandas, scikit-learn, and PyTorch.",
-    position: 'Instructor',
-    link: 'https://breakoutmentors.com/',
-  },
-  {
-    name: 'CS106S - Coding for Social Good',
-    dates: {
-      start: '01.2021',
-      end: '12.2021',
-    },
-    description:
-      'Collaborated with other TAs to architect starter code and prepare course material on integrating tech and social good — specifically taught curriculum on cancerous tumor classification using k-nearest neighbors algorithm to 30+ students',
-    position: 'Teacher\'s Assistant',
-    link: 'https://web.stanford.edu/class/cs106s/',
   },
   {
     name: 'Computational Soft Matter Lab, UoM',
