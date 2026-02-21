@@ -1,121 +1,132 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
+import Masonry from '@mui/lab/Masonry';
 import './Work.css';
-import Sidebar from '../../components/Sidebar/Sidebar';
 import WORK from '../../assets/work';
 import EXPERIENCE from '../../assets/experience';
+import ART from '../../assets/art';
 
 export default function Work() {
-  const [work, setWork] = useState(WORK[0]);
   return (
-    <div className="about work">
-      <Sidebar
-        items={EXPERIENCE.map((exp) => (
+    <main className="work-page">
+      <p className="bio">
+        I'm an AI product engineer passionate about data and creative tech.
+      </p>
+      <div className="profile-links">
+        <a href="mailto:shriathi@stanford.alumni.edu" aria-label="Email">
+          <FontAwesomeIcon icon={faEnvelope} size="xl" />
+        </a>
+        <a href="https://www.linkedin.com/in/shridhar-athinarayanan-638493199/" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+          <FontAwesomeIcon icon={faLinkedin} size="xl" />
+        </a>
+        <a href="https://github.com/shridharathi" aria-label="GitHub" target="_blank" rel="noreferrer">
+          <FontAwesomeIcon icon={faGithub} size="xl" />
+        </a>
+        <a href="https://medium.com/@shridharathi" aria-label="Medium" target="_blank" rel="noreferrer">
+          <FontAwesomeIcon icon={faMedium} size="xl" />
+        </a>
+      </div>
+
+      <section className="content-section">
+        <h2 className="section-heading">Experience</h2>
+        {EXPERIENCE.map((exp) => (
           <Experience
+            key={exp.name}
             {...exp}
-            dates={[exp.dates.start, exp.dates.end ?? 'Present']}
+            year={exp.year}
           />
         ))}
-      >
-        <div className="description projects-header">
-          <p className="bio">
-            I'm an AI product engineer passionate about 
-          <br />
-            data and creative tech.
-          </p>
-          <br />
-          <p className='school'> Stanford University<br /></p>
-          <p className='school-degrees'>  M.S. Computer Science, AI (2024)<br /> </p>
-          <p className='school-degrees'> B.S. Data Science and Studio Art (2023) </p>
-          <p className="section-header pt-5">EXPERIENCE</p>
-        </div>
-      </Sidebar>
-      <div className="intro-container">
-        <p className="section-header projects-header">PROJECTS</p>
-        <div className="project-links">
-          {WORK.map((w) => (
-            <p
-              onClick={() => setWork(w)}
-              className={work.name === w.name && 'selected-project'}
-            >
-              {w.name}
+      </section>
+
+      <section className="content-section">
+        <h2 className="section-heading">Projects</h2>
+        {WORK.map((item) => (
+        <div key={item.name} className="project-block">
+          <a
+            href={item.link}
+            target="_blank"
+            rel="noreferrer"
+            className="project-images"
+          >
+            {item.images.map((img, index) => (
+              <img
+                src={`images/${img}`}
+                alt={`${item.name} number ${index}`}
+                style={{ maxWidth: `${100 / item.images.length}%` }}
+                key={`${item.name}-${index}`}
+              />
+            ))}
+          </a>
+          <div className="project-info">
+            <p className="heading project-heading" id={item.name.replace(' ', '_')}>
+              {item.name}
             </p>
-          ))}
-        </div>
-        <div className="projects-container">
-          <div>
-            <a
-              href={work.link}
-              target="_blank"
-              rel="noreferrer"
-              className="project-images"
-            >
-              {work.images.map((img, index) => (
-                <img
-                  src={`images/${img}`}
-                  alt={`${work.name} number ${index}`}
-                  style={{ maxWidth: `${100 / work.images.length}%`}}
-                  key={`${work.name} number ${index}`}
-                />
-              ))}
-            </a>
-            <div className="project-info">
-              <p className="heading project-heading" id={work.name.replace(' ', '_')}> {work.name} </p>
-              <p className="stack" dangerouslySetInnerHTML={{ __html: work.stack }}></p>
-            </div>
-            <br />
-            <br />
-            <div dangerouslySetInnerHTML={{ __html: work.description }}></div>
-            <br />
-            <br />
+            <p className="stack" dangerouslySetInnerHTML={{ __html: item.stack }} />
           </div>
+          <br />
+          <br />
+          <div dangerouslySetInnerHTML={{ __html: item.description }} />
+          <br />
+          <br />
         </div>
-        <div className="mobile-project-info">
-          {WORK.map((work) => (
-            <div>
-              <a
-                href={work.link}
-                target="_blank"
-                rel="noreferrer"
-                className="project-images"
-              >
-                {work.images.map((img, index) => (
-                  <img
-                    src={`images/${img}`}
-                    alt={`${work.name} number ${index}`}
-                    style={{ maxWidth: `${100 / work.images.length}%` }}
-                    key={`${work.name} number ${index}`}
-                  />
-                ))}
-              </a>
-              <p
-                className="heading project-heading"
-                id={work.name.replace(' ', '_')}
-              >
-                {work.name}
-              </p>
-              <br />
-              <div dangerouslySetInnerHTML={{ __html: work.description }}></div>
-              <br />
-              <br />
-            </div>
-          ))}
+      ))}
+      </section>
+
+      <section className="education-section">
+        <h2 className="education-heading">Education</h2>
+        <p className="school">Stanford University</p>
+        <p className="school-degrees">M.S. Computer Science, AI (2024)</p>
+        <p className="school-degrees">B.S. Data Science and Studio Art (2023)</p>
+      </section>
+
+      <section className="content-section">
+        <h2 className="section-heading">Artwork</h2>
+        <div className="art-flow">
+          <Masonry columns={3} spacing={2} className="art-masonry">
+            {ART.map((item, index) => (
+              <div key={index} className="play-gallery">
+                <img
+                  src={`art/${item.img}`}
+                  alt={item.title}
+                  loading="lazy"
+                  style={{ display: 'block', width: '100%' }}
+                />
+              </div>
+            ))}
+          </Masonry>
+          <Masonry columns={1} spacing={2} className="art-masonry-mobile">
+            {ART.map((item, index) => (
+              <div key={index} className="play-gallery-mobile">
+                <img
+                  src={`art/${item.img}`}
+                  alt={item.title}
+                  loading="lazy"
+                  style={{ display: 'block', width: '100%' }}
+                />
+              </div>
+            ))}
+          </Masonry>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 
-function Experience({ name, dates, description, position, link }) {
+function Experience({ name, year, description, position, link }) {
   return (
     <div className="experience-container">
-      <div className="experience-header">
-        <a href={link} target="_blank" rel="noreferrer">
-          {name}
-        </a>
-        <p className="experience-dates">{dates.join('-')}</p>
+      <div className="experience-dates">{year}</div>
+      <div className="experience-content">
+        <div className="experience-header">
+          <a href={link} target="_blank" rel="noreferrer">
+            {name}
+          </a>
+        </div>
+        <p className="experience-position">{position}</p>
+        <p className="experience-description" dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, '<br>') }}></p>
       </div>
-      <p className="experience-position">{position}</p>
-      <p className="experience-description" dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, '<br>') }}></p>
     </div>
   );
 }

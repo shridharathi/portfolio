@@ -27,11 +27,59 @@ h1 {
 
 .body {
   width: 95%;
-  margin: 0vh auto;
-  top: 0;
-  left: 0;
-  padding-top: 2vh;
+  margin: 0 auto;
+  padding-top: 0.5vh;
 }
+
+.body.dark {
+  background: #191f19;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.body.dark a {
+  color: #e0e0e0;
+}
+
+.body.dark a:hover {
+  color: #fff;
+}
+
+html[data-theme="dark"] body {
+  background: #191f19;
+}
+
+.body.dark .experience-dates,
+.body.dark .experience-position,
+.body.dark .experience-description,
+.body.dark .stack,
+.body.dark .school-degrees {
+  color: #b0b0b0;
+}
+
+.body.dark .project-heading,
+.body.dark .name a,
+.body.dark .heading {
+  color: #fff;
+}
+
+.body.dark .section-heading,
+.body.dark .education-heading {
+  color: #fff;
+}
+
+.body.dark .bio {
+  color: #fff;
+}
+
+.body.dark .school {
+  color: #e0e0e0;
+}
+
+.body.dark .profile-links a {
+  color: #e0e0e0;
+}
+
 a {
   color: black;
   text-decoration: none;

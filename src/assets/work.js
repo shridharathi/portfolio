@@ -6,7 +6,7 @@ const WORK = [
       '<p>FLORA is the ultimate orchestration layer to plug and play with all the latest AI models. </br> </br>I built styles into the product, allowing users to do style transfers on images using Flux LoRAs. This project involved creating a custom pipeline to load/unload Flux LoRAs on a Modal container along with creating UI components to select and upload LoRAs.</br> <br> Above showcases the styles "Tarot Card", "Victorian Drawing", "Watercolor", "Studio Ghibli", "Retrofuturism", "Pixar", and "Pixel". </br></p>',
     stack: 'React • JavaScript • HTML/CSS • Modal • Python',
     summary:
-      'FLORA is an infinite AI canvas - I made their landing page and am working as a backend engineer',
+      'FLORA is an infinite AI canvas - I made their mobile landing page and am working as a backend engineer',
     date: '04.2024',
     link: 'https://florafauna.ai',
   },
@@ -32,41 +32,7 @@ const WORK = [
     date: '04.2024',
     link: 'https://medium.com/@shridharathi/employing-pretrained-vision-and-language-models-to-auto-label-cad-files-d872cad2299a/',
   },
-  {
-    name: 'Room Genius',
-    images: ['room_genius.png'],
-    description:
-      '<p>AI Interior Design app which also finds products on Amazon. 30k+ users, 2k+ MRR.</p>',
-    stack: 'React • PostgreSQL • Supabase • Stripe • Figma',
-    summary:
-      'AI Interior Design app which also finds products on Amazon. 30k+ users, 2k+ MRR.',
-    date: '06.2024',
-    link: 'https://tryroomgenius.com',
-  },
-  {
-    name: 'Vibeify',
-    images: ['vibeify.png'],
-    description:
-      '<p>Vibeify is a web application that converts an image or text into a customized playlist. </br></br> The user is prompted to submit an image or text which is passed through GPT-4-vision to output a list of related songs. These songs are then found through Spotify search and put into a playlist on the user\'s Spotify account. This project was an exploration of commodifing GPT-4 vision into an accessible, fun product to showcase AI\'s capability of creative content. </br></br>This webapp uses a FastAPI backend deployed on Heroku and React frontend deployed with Netlify.</p>',
-    stack: 'React • FastAPI • Spotify API • OpenAI API',
-    summary:
-      'Vibeify is a web application that converts an image or text into a customized playlist. ',
-    date: '04.2024',
-    link: 'https://github.com/shridharathi/vibeify',
-  },
-
-  {
-    name: 'URL Chatbot',
-    images: ['url.png'],
-    description:
-      '<p>Chat/query on text from any URL you want to upload. </br></br> This webapp was an exploration in self-implementing Retrival Augmented Generation (RAG) technology. The backend scrapes the text in the URL, chunks the text, embeds the chunks using OpenAI embeddings, and stores the embeddings in Pinecone. Then, the user can query about content in the webpage; this query is constructed into a prompt for GPT-4, and a similarity search is conducted within the Pinecone database to retreive the most relevant information/answer. </p>',
-    stack: 'Streamlit • FastAPI • Pinecone • OpenAI',
-    summary:
-      'Chat/query on text from any URL you want to upload',
-    date: '01.2024',
-    link: 'https://github.com/shridharathi/rag-llm-chatbot',
-  },
-
+  
   {
     name: 'Art Classifier',
     images: ['art.png'],

@@ -1,10 +1,7 @@
 .sidebar-container {
-  border-right: 1px solid black;
-  width: 32%;
-  overflow: auto;
-  position: fixed;
-  top: calc(5vh + 51px);
-  bottom: 0;
+  width: 100%;
+  position: static;
+  overflow: visible;
 }
 
 .sidebar-item {
@@ -21,8 +18,8 @@
     width: 95%;
     border-right: none;
     position: static;
-    overflow: initial;
-    border-top: 1px solid black;
+    overflow: visible;
+    border-top: none;
   }
   .intro-container {
     overflow: initial;

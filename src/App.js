@@ -1,21 +1,29 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Header from './components/Header/Header';
 import Work from './pages/Work/Work';
-import Art from './pages/Art/Art';
 
 function App() {
-  return (
-    <div className="body">
-      <Header />
+  const [darkMode, setDarkMode] = useState(() => {
+    try {
+      return localStorage.getItem('darkMode') === 'true';
+    } catch {
+      return false;
+    }
+  });
 
-      <Routes>
-        <Route exact path="/" element={<Work />} />
-        <Route exact path="/art" element={<Art />} /> 
-        <Route exact path="*" element={<Work />} />
-      </Routes>
+  useEffect(() => {
+    try {
+      localStorage.setItem('darkMode', String(darkMode));
+    } catch {}
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+
+  return (
+    <div className={`body ${darkMode ? 'dark' : ''}`}>
+      <Header darkMode={darkMode} onToggleDarkMode={() => setDarkMode((d) => !d)} />
+      <Work />
     </div>
   );
 }
