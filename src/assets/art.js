@@ -79,10 +79,6 @@ const ART = [
     title: 'P',
   },
   {
-    img: 'madison.png',
-    title: 'P',
-  },
-  {
     img: 'amma.png',
     title: 'P',
   },
