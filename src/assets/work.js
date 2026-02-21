@@ -1,5 +1,26 @@
 const WORK = [
   {
+    name: 'Image Editing Arena',
+    images: ['arena.png'],
+    description:
+      '<p>Image Editing Arena is a platform for users to edit images using the latest image models. Powered by Replicate.</p>',
+    stack: 'React • Tailwind CSS • Replicate API',
+    summary: 'Image Editing Arena is a platform for users to edit images using AI.',
+    date: '11.2025',
+    link: 'https://x.com/replicate/status/1993740895989191141/video/1',
+  },
+  {
+    name: 'FLORA: Mobile',
+    images: ['landing.gif', 'loading.gif', 'minecraft.gif'],
+    description:
+      '<p> Developed FLORA\'s mobile landing page which features a realtime AI filter where users can transform their face by typing their own prompts. This is done through a Stream Diffusion pipeline hosted on a Modal container in the backend.</p>',
+    stack: 'React • JavaScript • HTML/CSS • PostgreSQL • Modal • Python',
+    summary:
+      'FLORA is an infinite AI canvas - I made their landing page and am working as a backend engineer',
+    date: '04.2024',
+    link: 'https://florafauna.ai',
+  },
+  {
     name: 'FLORA: Styles',
     images: ['loras.png'],
     description:
@@ -7,17 +28,6 @@ const WORK = [
     stack: 'React • JavaScript • HTML/CSS • Modal • Python',
     summary:
       'FLORA is an infinite AI canvas - I made their mobile landing page and am working as a backend engineer',
-    date: '04.2024',
-    link: 'https://florafauna.ai',
-  },
-  {
-    name: 'FLORA: Mobile',
-    images: ['landing.gif', 'loading.gif', 'minecraft.gif'],
-    description:
-      '<p> I took lead on developing FLORA\'s mobile landing page which features a realtime AI filter where users can transform their face by typing their own prompts. This is done through a Stream Diffusion pipeline hosted on a Modal container in the backend.</p>',
-    stack: 'React • JavaScript • HTML/CSS • PostgreSQL • Modal • Python',
-    summary:
-      'FLORA is an infinite AI canvas - I made their landing page and am working as a backend engineer',
     date: '04.2024',
     link: 'https://florafauna.ai',
   },

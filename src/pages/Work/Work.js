@@ -40,7 +40,7 @@ export default function Work() {
         ))}
       </section>
 
-      <section className="content-section">
+      <section className="content-section projects-section">
         <h2 className="section-heading">Projects</h2>
         {WORK.map((item) => (
         <div key={item.name} className="project-block">
@@ -65,11 +65,7 @@ export default function Work() {
             </p>
             <p className="stack" dangerouslySetInnerHTML={{ __html: item.stack }} />
           </div>
-          <br />
-          <br />
-          <div dangerouslySetInnerHTML={{ __html: item.description }} />
-          <br />
-          <br />
+          <div className="project-description" dangerouslySetInnerHTML={{ __html: item.description }} />
         </div>
       ))}
       </section>
