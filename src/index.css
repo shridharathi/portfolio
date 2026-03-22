@@ -1,18 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url(https://db.onlinewebfonts.com/c/a8d23046bc8d38ee78b38e95ec47f9e5?family=Franklin+Gothic+Medium);
+@import url(https://db.onlinewebfonts.com/c/e130d119682ecb567748343bf7f263b0?family=Franklin+Gothic+Book);
+@import url(https://db.onlinewebfonts.com/c/45a9841a7f5ba7a780f0a804553cfce7?family=Franklin+Gothic+Medium+V2);
+@import url(https://db.onlinewebfonts.com/c/66110dea1155f464a60f6567e97e6e8c?family=Franklin+Gothic%2A+Demi);
+@import url(https://db.onlinewebfonts.com/c/c694bf4d912ab7e408892e78151645d8?family=Consolas+W01+Bold);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 w-full overflow-x-hidden bg-white font-franklin antialiased;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+
+  a {
+    @apply text-black no-underline dark:text-neutral-200 dark:hover:text-white;
+  }
+
+  p,
+  ul {
+    @apply m-0;
+  }
+
+  #root {
+    @apply min-h-screen w-full;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+@layer utilities {
+  .cyl-warp-ready {
+    will-change: transform, opacity;
+    transform-origin: center center;
+  }
 
-#root {
-  width: 100%;
-  min-height: 100vh;
+  .cyl-line-warp {
+    display: block;
+    line-height: 1.42;
+  }
+
+  /** Single warp target for year + title (flex row) — same DOM shape as other warps (span). */
+  .cyl-warp-bundle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cyl-flow-seg {
+    display: contents;
+  }
 }
