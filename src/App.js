@@ -6,7 +6,13 @@ import Work from './pages/Work/Work';
 import { CYL_PERSPECTIVE_PX } from './cylWarpConstants';
 import { resetAndSplitLineRoots } from './lineWarp';
 
-const CYL_ALL_BLOCKS = '[data-cyl="warp"]';
+const CYL_WARP_SELECTOR = '[data-cyl="warp"]';
+const CYL_IMAGE_SELECTOR = '[data-cyl="image"]';
+const CYL_ALL_BLOCKS = `${CYL_WARP_SELECTOR}, ${CYL_IMAGE_SELECTOR}`;
+
+function isImageBlock(el) {
+  return el.getAttribute('data-cyl') === 'image';
+}
 
 /** Cylinder warp — tune here: smaller perspective / higher angles = stronger bend */
 const WARP = {
@@ -40,6 +46,12 @@ const WARP = {
   viewportWidthBleed: 0.98,
   /** push slightly into the screen at edges (adds depth with perspective) */
   translateZ: 4,
+  /**
+   * Exponent applied to |t| before computing rotateX for image strips.
+   * >1 means strips near viewport center flatten out much faster while
+   * edges still curve aggressively.  1 = original linear behavior.
+   */
+  imageStripRotateExponent: 20,
 };
 
 /**
@@ -70,7 +82,10 @@ function cylSilhouette(u) {
 function buildWarpTransform(t, opts = {}) {
   const u = cylAmount(t);
   const s = cylSilhouette(u);
-  const rx = Math.sign(t) * u * WARP.maxRotateDeg;
+  const ru = opts.imageStripStretch
+    ? Math.pow(u, WARP.imageStripRotateExponent)
+    : u;
+  const rx = Math.sign(t) * ru * WARP.maxRotateDeg;
   const xStretch = opts.imageStripStretch ? WARP.stretchXImageStrip : WARP.stretchX;
   const yStretch = opts.imageStripStretch ? WARP.stretchYImageStrip : WARP.stretchY;
   let sx;
@@ -135,7 +150,8 @@ function App() {
     function measure() {
       content.style.transform = 'none';
       resetAndSplitLineRoots(content);
-      content.querySelectorAll(CYL_ALL_BLOCKS).forEach((el) => {
+      const blocks = content.querySelectorAll(CYL_ALL_BLOCKS);
+      blocks.forEach((el) => {
         el.style.transform = 'none';
         el.style.opacity = '';
       });
@@ -146,9 +162,7 @@ function App() {
         ? mainEl.getBoundingClientRect().width
         : contentRect.width;
 
-      const plainSectionSelector = '[data-cyl-plain-section]';
-      const layouts = Array.from(content.querySelectorAll(CYL_ALL_BLOCKS))
-        .filter((el) => !el.closest(plainSectionSelector))
+      const layouts = Array.from(blocks)
         .filter((el) => el.offsetHeight > 0)
         .map((el) => {
           const rect = el.getBoundingClientRect();
@@ -157,7 +171,7 @@ function App() {
             offsetY: rect.top - contentRect.top,
             height: rect.height,
             width: rect.width,
-            warp: true,
+            warp: !isImageBlock(el),
           };
         })
         .sort((a, b) => a.offsetY - b.offsetY);
@@ -165,23 +179,10 @@ function App() {
       if (layouts.length === 0) return;
 
       const vh = window.innerHeight;
-      const cy = vh / 2;
       const firstCenter = layouts[0].offsetY + layouts[0].height / 2;
-      const lastLayoutCenter =
+      const lastCenter =
         layouts[layouts.length - 1].offsetY +
         layouts[layouts.length - 1].height / 2;
-
-      const mainBottom = mainEl
-        ? mainEl.getBoundingClientRect().bottom - contentRect.top
-        : lastLayoutCenter;
-      /**
-       * When scroll is max, translateY = cy - lastCenter. Content y appears at y + translateY.
-       * Bottom of main (mainBottom) should sit near the bottom of the viewport:
-       * mainBottom + (cy - lastCenter) <= vh - pad  →  lastCenter >= mainBottom + cy - vh + pad
-       */
-      const pad = 32;
-      const lastCenterNeededForMain = mainBottom + cy - vh + pad;
-      const lastCenter = Math.max(lastLayoutCenter, lastCenterNeededForMain);
       const scrollRange = lastCenter - firstCenter;
 
       spacer.style.height = scrollRange + vh + 'px';
@@ -228,11 +229,40 @@ function App() {
         if (Math.abs(visualCenter - cy) > vh * 1.5) {
           el.style.transform = buildWarpTransform(t, imageStripOpts);
           el.style.opacity = '0';
+          el.style.clipPath = '';
           return;
         }
 
         el.style.transform = buildWarpTransform(t, imageStripOpts);
         el.style.opacity = '1';
+
+        // Taper image strip edges into trapezoids so adjacent strips
+        // form one continuous silhouette instead of a staircase.
+        if (isImageStrip && width > 0) {
+          const tTop = Math.max(-1, Math.min(1, ((visualCenter - height / 2) - cy) / cy));
+          const tBot = Math.max(-1, Math.min(1, ((visualCenter + height / 2) - cy) / cy));
+
+          const sxAt = (tv) => {
+            const uv = Math.min(1, Math.max(0, Math.abs(tv)));
+            const sv = 1 - Math.sqrt(Math.max(0, 1 - uv * uv));
+            const col = Math.max(width, 1);
+            const target = (vw * WARP.viewportWidthBleed) / col;
+            return 1 + (target - 1) * sv;
+          };
+
+          const sxC = sxAt(t);
+          const rTop = sxAt(tTop) / sxC;
+          const rBot = sxAt(tBot) / sxC;
+
+          const tl = ((1 - rTop) / 2 * 100).toFixed(2);
+          const tr = ((1 + rTop) / 2 * 100).toFixed(2);
+          const br = ((1 + rBot) / 2 * 100).toFixed(2);
+          const bl = ((1 - rBot) / 2 * 100).toFixed(2);
+
+          el.style.clipPath = `polygon(${tl}% 0%, ${tr}% 0%, ${br}% 100%, ${bl}% 100%)`;
+        } else {
+          el.style.clipPath = '';
+        }
       });
     }
 

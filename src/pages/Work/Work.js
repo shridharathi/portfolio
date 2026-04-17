@@ -182,22 +182,21 @@ export default function Work() {
         </p>
       </section>
 
-      <section className="mt-[2.75rem]" data-cyl-plain-section="">
-        <h2 className="mb-5 text-[1.3rem] font-bold dark:text-white">Artwork</h2>
+      <section className="mt-[2.75rem]">
+        <h2
+          data-cyl="line-root"
+          className="mb-5 text-[1.3rem] font-bold dark:text-white"
+        >
+          Artwork
+        </h2>
         <div className="mt-8">
-          {/*
-            MUI Masonry skips layout while any child img has height 0 (see Masonry.js).
-            Eager load keeps column count / shortest-column placement stable; lazy + off-screen
-            artwork often left the grid stuck looking like a plain multi-column row.
-          */}
           <Masonry columns={4} spacing={1.5} className="!hidden md:!block">
             {ART.map((item, index) => (
-              <div key={item.img + index} className="w-full">
+              <div key={index} data-cyl="image">
                 <img
                   src={`art/${item.img}`}
                   alt={item.title}
-                  loading="eager"
-                  decoding="async"
+                  loading="lazy"
                   className="mx-auto block w-full max-w-[168px] align-top"
                 />
               </div>
@@ -205,12 +204,11 @@ export default function Work() {
           </Masonry>
           <Masonry columns={2} spacing={1.5} className="!block md:!hidden">
             {ART.map((item, index) => (
-              <div key={item.img + index} className="w-full">
+              <div key={index} data-cyl="image">
                 <img
                   src={`art/${item.img}`}
                   alt={item.title}
-                  loading="eager"
-                  decoding="async"
+                  loading="lazy"
                   className="mx-auto block w-full max-w-[188px] align-top"
                 />
               </div>
