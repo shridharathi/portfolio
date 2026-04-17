@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faCube } from '@fortawesome/free-solid-svg-icons';
 
 import Work from './pages/Work/Work';
 import { CYL_PERSPECTIVE_PX } from './cylWarpConstants';
@@ -51,7 +51,7 @@ const WARP = {
    * >1 means strips near viewport center flatten out much faster while
    * edges still curve aggressively.  1 = original linear behavior.
    */
-  imageStripRotateExponent: 20,
+  imageStripRotateExponent: 15,
 };
 
 /**
@@ -125,13 +125,12 @@ function App() {
     }
   });
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
   const [warpEnabled, setWarpEnabled] = useState(() => {
     try {
       const stored = localStorage.getItem('warpEnabled');
       if (stored !== null) return stored === 'true';
     } catch {}
-    return !isMobile;
+    return true;
   });
 
   const spacerRef = useRef(null);
@@ -338,26 +337,32 @@ function App() {
           className={
             warpEnabled
               ? 'cyl-warp-ready mx-auto w-[95%] pt-[8vh] will-change-transform dark:min-h-screen dark:bg-[#1e1e1e] dark:text-white'
-              : 'mx-auto w-full dark:text-white'
+              : 'mx-auto w-[95%] pt-[8vh] dark:min-h-screen dark:bg-[#1e1e1e] dark:text-white'
           }
           ref={contentRef}
         >
-          <Work />
+          <Work warpEnabled={warpEnabled} />
         </div>
       </div>
       <div className="fixed right-8 top-5 z-[100] flex items-center gap-4 max-md:right-[4vw] max-md:top-4">
         <button
           type="button"
-          className="cursor-pointer border-none bg-transparent p-1.5 font-inherit text-[0.75rem] text-[#1e1e1e] hover:opacity-85 dark:text-white"
+          className="hidden cursor-pointer border-none bg-transparent p-1.5 font-inherit text-[#1e1e1e] hover:opacity-85 dark:text-white md:block"
           onClick={() => setWarpEnabled((w) => !w)}
           aria-label={warpEnabled ? 'Switch to flat view' : 'Switch to cylinder view'}
           title={warpEnabled ? 'Flat view' : 'Cylinder view'}
         >
-          {warpEnabled ? 'Flat' : '3D'}
+          {warpEnabled ? (
+            <svg width="18" height="18" viewBox="-2 -2 24 18" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <polygon points="3,0 17,0 20,14 0,14" />
+            </svg>
+          ) : (
+            <FontAwesomeIcon icon={faCube} size="lg" />
+          )}
         </button>
         <button
           type="button"
-          className="cursor-pointer border-none bg-transparent p-1.5 font-inherit text-[#1e1e1e] hover:opacity-85 dark:text-white"
+          className="flex w-8 cursor-pointer items-center justify-center border-none bg-transparent p-1.5 font-inherit text-[#1e1e1e] hover:opacity-85 dark:text-white"
           onClick={() => setDarkMode((d) => !d)}
           aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           title={darkMode ? 'Light mode' : 'Dark mode'}

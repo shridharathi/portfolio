@@ -46,10 +46,6 @@ const ART = [
     title: 'P',
   },
   {
-    img: 'Piece6.webp',
-    title: 'P',
-  },
-  {
     img: 'Piece8.webp',
     title: 'P',
   },

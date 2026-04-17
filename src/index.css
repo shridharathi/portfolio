@@ -10,7 +10,7 @@
 
 @layer base {
   body {
-    @apply m-0 w-full overflow-x-hidden bg-white font-franklin antialiased;
+    @apply m-0 w-full overflow-x-hidden bg-white font-franklin antialiased dark:bg-[#1e1e1e];
   }
 
   h1 {

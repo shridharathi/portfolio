@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
-import Masonry from '@mui/lab/Masonry';
 import CylImageStripStack from '../../components/CylImageStripStack';
 import WORK from '../../assets/work';
 import EXPERIENCE from '../../assets/experience';
@@ -10,7 +9,7 @@ import ART from '../../assets/art';
 
 const SHOW_PROJECT_IMAGES = true;
 
-export default function Work() {
+export default function Work({ warpEnabled = true }) {
   return (
     <main className="mx-auto flex w-full max-w-[720px] flex-col pt-12 pb-[6vh] max-md:px-[4vw]">
       <header className="mb-2 w-full pb-1">
@@ -104,17 +103,31 @@ export default function Work() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`${item.name} (opens in new tab)`}
-                  className="mx-auto flex h-[min(420px,max(240px,50vw))] w-full min-h-[240px] gap-0 overflow-visible transition-all duration-[250ms] ease-in-out hover:opacity-70 max-md:h-[min(360px,max(220px,56vw))]"
+                  className={
+                    warpEnabled
+                      ? 'mx-auto flex h-[min(420px,max(240px,50vw))] w-full min-h-[240px] gap-0 overflow-visible transition-all duration-[250ms] ease-in-out hover:opacity-70 max-md:h-[min(360px,max(220px,56vw))]'
+                      : 'flex w-full transition-all duration-[250ms] ease-in-out hover:opacity-70'
+                  }
                 >
-                  {item.images.map((img, index) => (
-                    <CylImageStripStack
-                      key={`${item.name}-${index}`}
-                      src={`images/${img}`}
-                      alt={`${item.name} preview ${index + 1}`}
-                      stripCount={64}
-                      className="min-h-0 min-w-0 flex-1 basis-0 pr-[1vh] last:pr-0"
-                    />
-                  ))}
+                  {warpEnabled
+                    ? item.images.map((img, index) => (
+                        <CylImageStripStack
+                          key={`${item.name}-${index}`}
+                          src={`images/${img}`}
+                          alt={`${item.name} preview ${index + 1}`}
+                          stripCount={64}
+                          className="min-h-0 min-w-0 flex-1 basis-0 pr-[1vh] last:pr-0"
+                        />
+                      ))
+                    : item.images.map((img, index) => (
+                        <img
+                          key={`${item.name}-${index}`}
+                          src={`images/${img}`}
+                          alt={`${item.name} preview ${index + 1}`}
+                          className="w-full object-cover pr-[1vh] last:pr-0"
+                          style={{ maxWidth: `${100 / item.images.length}%` }}
+                        />
+                      ))}
                 </a>
               ) : null}
               <div
@@ -189,31 +202,17 @@ export default function Work() {
         >
           Artwork
         </h2>
-        <div className="mt-8">
-          <Masonry columns={4} spacing={1.5} className="!hidden md:!block">
-            {ART.map((item, index) => (
-              <div key={index} data-cyl="image">
-                <img
-                  src={`art/${item.img}`}
-                  alt={item.title}
-                  loading="lazy"
-                  className="mx-auto block w-full max-w-[168px] align-top"
-                />
-              </div>
-            ))}
-          </Masonry>
-          <Masonry columns={2} spacing={1.5} className="!block md:!hidden">
-            {ART.map((item, index) => (
-              <div key={index} data-cyl="image">
-                <img
-                  src={`art/${item.img}`}
-                  alt={item.title}
-                  loading="lazy"
-                  className="mx-auto block w-full max-w-[188px] align-top"
-                />
-              </div>
-            ))}
-          </Masonry>
+        <div className="mt-8" style={{ columns: 3, columnGap: '12px' }}>
+          {ART.map((item, index) => (
+            <div key={index} data-cyl="image" style={{ breakInside: 'avoid', marginBottom: '12px' }}>
+              <img
+                src={`art/${item.img}`}
+                alt={item.title}
+                loading="lazy"
+                className="block w-full align-top"
+              />
+            </div>
+          ))}
         </div>
       </section>
     </main>
