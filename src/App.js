@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
@@ -125,6 +125,15 @@ function App() {
     }
   });
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  const [warpEnabled, setWarpEnabled] = useState(() => {
+    try {
+      const stored = localStorage.getItem('warpEnabled');
+      if (stored !== null) return stored === 'true';
+    } catch {}
+    return !isMobile;
+  });
+
   const spacerRef = useRef(null);
   const contentRef = useRef(null);
   const rafRef = useRef(0);
@@ -142,10 +151,27 @@ function App() {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);
 
+  useEffect(() => {
+    try {
+      localStorage.setItem('warpEnabled', String(warpEnabled));
+    } catch {}
+  }, [warpEnabled]);
+
   useLayoutEffect(() => {
     const spacer = spacerRef.current;
     const content = contentRef.current;
     if (!spacer || !content) return;
+
+    if (!warpEnabled) {
+      spacer.style.height = '0px';
+      content.style.transform = 'none';
+      content.querySelectorAll(CYL_ALL_BLOCKS).forEach((el) => {
+        el.style.transform = 'none';
+        el.style.opacity = '';
+        el.style.clipPath = '';
+      });
+      return;
+    }
 
     function measure() {
       content.style.transform = 'none';
@@ -296,28 +322,49 @@ function App() {
       window.removeEventListener('resize', onResize);
       window.removeEventListener('load', onResize);
     };
-  }, [darkMode]);
+  }, [darkMode, warpEnabled]);
 
   return (
     <>
       <div className="w-full" ref={spacerRef} />
-      <div className="fixed inset-0 z-[1] h-screen w-full overflow-hidden bg-white dark:bg-[#191f19]">
+      <div
+        className={
+          warpEnabled
+            ? 'fixed inset-0 z-[1] h-screen w-full overflow-hidden bg-white dark:bg-[#1e1e1e]'
+            : 'w-full bg-white dark:bg-[#1e1e1e]'
+        }
+      >
         <div
-          className="cyl-warp-ready mx-auto w-[95%] pt-[8vh] will-change-transform dark:min-h-screen dark:bg-[#191f19] dark:text-white"
+          className={
+            warpEnabled
+              ? 'cyl-warp-ready mx-auto w-[95%] pt-[8vh] will-change-transform dark:min-h-screen dark:bg-[#1e1e1e] dark:text-white'
+              : 'mx-auto w-full dark:text-white'
+          }
           ref={contentRef}
         >
           <Work />
         </div>
       </div>
-      <button
-        type="button"
-        className="fixed right-8 top-5 z-[100] cursor-pointer border-none bg-transparent p-1.5 font-inherit text-[#191f19] hover:opacity-85 dark:text-white max-md:right-[4vw] max-md:top-4"
-        onClick={() => setDarkMode((d) => !d)}
-        aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-        title={darkMode ? 'Light mode' : 'Dark mode'}
-      >
-        <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size="lg" />
-      </button>
+      <div className="fixed right-8 top-5 z-[100] flex items-center gap-4 max-md:right-[4vw] max-md:top-4">
+        <button
+          type="button"
+          className="cursor-pointer border-none bg-transparent p-1.5 font-inherit text-[0.75rem] text-[#1e1e1e] hover:opacity-85 dark:text-white"
+          onClick={() => setWarpEnabled((w) => !w)}
+          aria-label={warpEnabled ? 'Switch to flat view' : 'Switch to cylinder view'}
+          title={warpEnabled ? 'Flat view' : 'Cylinder view'}
+        >
+          {warpEnabled ? 'Flat' : '3D'}
+        </button>
+        <button
+          type="button"
+          className="cursor-pointer border-none bg-transparent p-1.5 font-inherit text-[#1e1e1e] hover:opacity-85 dark:text-white"
+          onClick={() => setDarkMode((d) => !d)}
+          aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          title={darkMode ? 'Light mode' : 'Dark mode'}
+        >
+          <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size="lg" />
+        </button>
+      </div>
     </>
   );
 }

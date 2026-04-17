@@ -6,112 +6,112 @@ const ART = [
   
 
   {
-    img: 'still4.png',
+    img: 'still4.webp',
     title: 'alissa (progress)',
   },
   {
-    img: 'parents.jpg',
+    img: 'parents.webp',
     title: 'parents',
   },
   {
-    img: 'emille.jpg',
+    img: 'emille.webp',
     title: 'parents',
   },
   {
-    img: 'veg.png',
+    img: 'veg.webp',
     title: 'veg',
   },
   {
-    img: 'alissa.png',
+    img: 'alissa.webp',
     title: 'veg',
   },
   {
-    img: 'Piece1.jpg',
+    img: 'Piece1.webp',
     title: 'P',
   },
   {
-    img: 'Piece2.jpg',
+    img: 'Piece2.webp',
     title: 'P',
   },
   {
-    img: 'Piece3.jpg',
+    img: 'Piece3.webp',
     title: 'P',
   },
   {
-    img: 'Piece4.jpg',
+    img: 'Piece4.webp',
     title: 'P',
   },
   {
-    img: 'Piece5.jpg',
+    img: 'Piece5.webp',
     title: 'P',
   },
   {
-    img: 'Piece6.jpg',
+    img: 'Piece6.webp',
     title: 'P',
   },
   {
-    img: 'Piece8.jpg',
+    img: 'Piece8.webp',
     title: 'P',
   },
   {
-    img: 'Piece9.jpg',
+    img: 'Piece9.webp',
     title: 'P',
   },
   {
-    img: 'Piece10.jpg',
+    img: 'Piece10.webp',
     title: 'P',
   },
   {
-    img: 'Piece11.jpg',
+    img: 'Piece11.webp',
     title: 'P',
   },
 
   {
-    img: 'ally.png',
+    img: 'ally.webp',
     title: 'P',
   },
   {
-    img: 'iago.png',
+    img: 'iago.webp',
     title: 'P',
   },
   {
-    img: 'nft.png',
+    img: 'nft.webp',
     title: 'P',
   },
   {
-    img: 'amma.png',
+    img: 'amma.webp',
     title: 'P',
   },
   {
-    img: 'brent.png',
+    img: 'brent.webp',
     title: 'P',
   },
   {
-    img: 'song.png',
+    img: 'song.webp',
     title: 'P',
   },
   {
-    img: 'em.png',
+    img: 'em.webp',
     title: 'P',
   },
   {
-    img: 'self.png',
+    img: 'self.webp',
     title: 'P',
   },
   {
-    img: 'mango.png',
+    img: 'mango.webp',
     title: 'P',
   },
   {
-    img: 'coke.png',
+    img: 'coke.webp',
     title: 'P',
   },
   {
-    img: 'fka.png',
+    img: 'fka.webp',
     title: 'P',
   },
   {
-    img: 'pear.png',
+    img: 'pear.webp',
     title: 'P',
   },
 ];
