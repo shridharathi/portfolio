@@ -1,5 +1,35 @@
 const WORK = [
   {
+    name: 'index',
+    images: ['iindex.webp'],
+    description:
+      '<p>index is a public data visualization platform — a feed of charts, graphs, and data stories curated and created by the community. Built to make data explorable and shareable.</p>',
+    stack: 'React • D3.js • Cloudflare Agents SDK',
+    summary: 'A public feed of data visualizations and charts.',
+    date: '06.2026',
+    link: 'https://iindex.co/',
+  },
+  {
+    name: 'Dojo Notes',
+    images: ['dojonotes.webp'],
+    description:
+      '<p>Dojo is an AI workspace — drop in PDFs, websites, videos, and images, ask anything. Your knowledge, organized and powered by AI.</p>',
+    stack: 'React • Node.js • AI APIs',
+    summary: 'An AI workspace for organizing and querying your knowledge.',
+    date: '05.2026',
+    link: 'https://www.dojonotes.com/',
+  },
+  {
+    name: 'Replicate Agent',
+    images: ['replicate-agent.webp'],
+    description:
+      '<p>A conversational AI agent that generates images, videos, music, and more by chatting with Replicate\'s model library. Powered by Cloudflare Workers.</p>',
+    stack: 'Cloudflare Workers • Replicate API • AI SDK',
+    summary: 'Chat-based AI generation agent built on Replicate.',
+    date: '04.2026',
+    link: 'https://agent.replicate.workers.dev/',
+  },
+  {
     name: 'Image Editing Arena',
     images: ['arena.webp'],
     description:
@@ -56,17 +86,6 @@ const WORK = [
   },
 
   {
-    name: 'Screenplay Generator',
-    images: ['screenplay.webp'],
-    stack: "Python • BeautifulSoup • LSTM • DistilGPT-2",
-    description:
-      "<p>This project was a capstone for CS224N - NLP with Deep Learning (2022) </br></br> Our primary motivating question was to determine how do various NLP model architectures compare when tasked to generate a movie screenplay in the artistic style of both a user-inputted genre and movie director. Previous work in long text generation exists, but we built various models on a novel application of having multiple user-inputted stylistic dimensions to control in generative text. We compared various models and approaches, particularly OpenAI’s GPT-2 language model along with the DistilGPT-2 model (this research was conducted in 2022), ultimately finding DistilGPT-2 under 10 epochs yielded the best screenplay generation. We compared model performances against a baseline LSTM architecture. </p>",
-    summary:
-      "Movie Screenplay Generator given genre and author name",
-    date: '04.2022',
-    link: 'https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1224/reports/custom_116978375.pdf',
-  },
-  {
     name: 'Pune Water',
     images: ['pune.webp', 'pune2.webp'],
     stack: 'Python • pandas • OpenCV • ArcGIS • Illustrator API',
@@ -77,17 +96,6 @@ const WORK = [
     date: '04.2020',
     link: 'https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/735906',
   },
-  {
-    name: 'Protein Folding',
-    images: ['protein.webp', 'protein2.webp'],
-    stack: 'Python • matplotlib • PyMol • OOP',
-    description:
-      "<p>The problem of protein structure prediction is defined simply: given the amino acid sequence of a protein, how can we predict its 3D structure? </br> </br>Although studies of proteins are rooted in biology and should always remain studied in a biological context, it is interesting to look at these structures through the lens of physics. A surprisingly popular model of polymers in general is the bead-spring model. This model treats atoms as beads and the distance between each adjacent atom as a massless harmonic spring. Using this model, I wanted to investigate the effect of using spring potential energy in the function of the Monte-Carlo Metropolis criterion. I implemented this in Python. </p>",
-    summary:
-      "Protein Structure Prediction",
-    date: '04.2020',
-    link: 'https://github.com/shridharathi/protein_folder',
-  }
 ];
 
 export default WORK;

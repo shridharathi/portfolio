@@ -1,0 +1,31 @@
+.sidebar-container {
+  border-right: 1px solid var(--border-color);
+  width: 32%;
+  overflow: auto;
+  position: fixed;
+  top: 72px;
+  bottom: 0;
+  background: var(--bg-color);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar-item {
+  width: 98%;
+  border-bottom: 1px solid var(--body-grey-lighter);
+  padding: 2.8vh 0;
+  padding-right: 1vw;
+}
+
+.sidebar-item:last-child {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-container {
+    width: 95%;
+    border-right: none;
+    position: static;
+    overflow: initial;
+    border-top: 1px solid var(--border-color);
+  }
+}

@@ -18,7 +18,7 @@ const EXPERIENCE = [
     year: '2023',
     description:
       'Developed auto-labeling technology for Autodesk Viewer CAD files using finetuned BLIP-2 models.',
-    position: 'Data Acquisition + Machine Learning Intern',
+    position: 'Data Acquisition + Machine Learning',
     link: 'https://medium.com/@shridharathi/employing-pretrained-vision-and-language-models-to-auto-label-cad-files-d872cad2299a',
   },
   {
@@ -34,7 +34,7 @@ const EXPERIENCE = [
     year: '2021',
     description:
       "Contributed to RAPIDS, pandas on the GPU. Accelerated read_csv calls on AWS S3 files by 3.5x using Apache Arrow.",
-    position: 'Data Engineering Intern',
+    position: 'Data Engineering',
     link: 'https://medium.com/@shridharathi/speed-up-s3-csv-file-reading-with-apache-arrow-5c0e181e6c58',
   },
   {
@@ -42,7 +42,7 @@ const EXPERIENCE = [
     year: '2020',
     description:
       'Geo-referenced and stitched 550+ raw pipe vector PDF files to digitize the entire water distribution system of Pune, India. (Presented @ American Geophysical Union 2020 conference)',
-    position: 'Data Science Intern',
+    position: 'Data Science',
     link: 'https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/735906',
   },
 ];
