@@ -22,14 +22,6 @@ const EXPERIENCE = [
     link: 'https://medium.com/@shridharathi/employing-pretrained-vision-and-language-models-to-auto-label-cad-files-d872cad2299a',
   },
   {
-    name: 'Catalog',
-    year: '2022',
-    description:
-      "Integrated CUDA-powered DNA sequencing library \"GASAL2\" into Catalog's decoding pipeline. 16x speedup.",
-    position: 'DNA Software Engineer',
-    link: 'https://catalogdna.com/',
-  },
-  {
     name: 'NVIDIA',
     year: '2021',
     description:
@@ -41,7 +33,7 @@ const EXPERIENCE = [
     name: 'Stanford FUSE',
     year: '2020',
     description:
-      'Geo-referenced and stitched 550+ raw pipe vector PDF files to digitize the entire water distribution system of Pune, India. (Presented @ American Geophysical Union 2020 conference)',
+      'Digitized the entire water distribution system of Pune, India.',
     position: 'Data Science',
     link: 'https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/735906',
   },

@@ -139,17 +139,16 @@
 }
 
 .experience-description {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--muted-text);
   font-weight: normal;
   margin: 0;
-  line-height: 1.45;
-  padding-top: 0.3vh;
+  padding-top: 0.4vh;
 }
 
 .experience-dates {
   color: var(--muted-text);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: normal;
   margin: 0;
   white-space: nowrap;
@@ -159,10 +158,8 @@
 
 .experience-position {
   color: var(--body-grey);
-  font-size: 0.82rem;
-  font-style: italic;
+  padding-bottom: 0.4vw;
   margin: 0;
-  padding-top: 0.15vh;
 }
 
 .experience-header {
@@ -171,16 +168,11 @@
   align-items: baseline;
 }
 
-.experience-header a {
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-
 .intro-container {
   padding-top: 3vh;
   overflow: auto;
   position: fixed;
-  top: 72px;
+  top: 90px;
   left: calc(33% + 3.6vw);
   right: 2.2vw;
   bottom: 0;
@@ -222,7 +214,7 @@
     display: flex;
     overflow: auto;
     position: fixed;
-    top: 72px;
+    top: 90px;
     bottom: 0;
     flex-direction: column;
   }

@@ -143,7 +143,6 @@ function Experience({ name, year, description, position, link }) {
         <a href={link} target="_blank" rel="noreferrer">
           {name}
         </a>
-        <p className="experience-dates">{year}</p>
       </div>
       <p className="experience-position">{position}</p>
       <p
