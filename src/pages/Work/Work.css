@@ -39,6 +39,7 @@
   font-weight: bold;
   font-size: 1.3rem;
   color: var(--text-color);
+  letter-spacing: 0.03em;
 }
 
 .section-tabs {
