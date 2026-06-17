@@ -3,7 +3,7 @@ const WORK = [
     name: 'index',
     images: ['iindex.webp'],
     description:
-      '<p>index is a public data visualization platform — a feed of charts, graphs, and data stories curated and created by the community. Built to make data explorable and shareable.</p>',
+      '<p>I built index as a way for people to generate clean, beautiful data visualizations. Users can share them to the social feed, making data a more explorable form of storytelling.</p>',
     stack: 'React • D3.js • Cloudflare Agents SDK',
     summary: 'A public feed of data visualizations and charts.',
     date: '06.2026',
@@ -13,7 +13,7 @@ const WORK = [
     name: 'Dojo Notes',
     images: ['dojonotes.webp'],
     description:
-      '<p>Dojo is an AI workspace — drop in PDFs, websites, videos, and images, ask anything. Your knowledge, organized and powered by AI.</p>',
+      '<p>The linear chat interface has not been iterated on since 2022. Dojo is a visual AI workspace where you can drop in PDFs, websites, videos, and images. Highlight context and ask questions. Share your work.</p>',
     stack: 'React • Node.js • AI APIs',
     summary: 'An AI workspace for organizing and querying your knowledge.',
     date: '05.2026',
@@ -23,7 +23,7 @@ const WORK = [
     name: 'Replicate Agent',
     images: ['replicate-agent.webp'],
     description:
-      '<p>A conversational AI agent that generates images, videos, music, and more by chatting with Replicate\'s model library. Powered by Cloudflare Workers.</p>',
+      '<p>A conversational AI agent that generates images, videos, music, and more by chatting with Replicate\'s model library. Powered by Cloudflare Workers and the Agents SDK.</p>',
     stack: 'Cloudflare Workers • Replicate API • AI SDK',
     summary: 'Chat-based AI generation agent built on Replicate.',
     date: '04.2026',
