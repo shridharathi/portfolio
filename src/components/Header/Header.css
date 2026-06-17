@@ -61,3 +61,29 @@ header {
 .dark-toggle:hover {
   opacity: 0.6;
 }
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 60px;
+    padding: 0 4vw;
+  }
+  .name {
+    font-size: 0.95rem;
+    padding-right: 0;
+  }
+  .links a {
+    margin-right: 12px;
+  }
+  .links a:first-of-type {
+    margin-left: 12px;
+  }
+  .links .fa-xl {
+    font-size: 1.05em;
+  }
+  .dark-toggle {
+    padding: 4px 0 4px 8px;
+  }
+  .dark-toggle .fa-lg {
+    font-size: 1.05em;
+  }
+}

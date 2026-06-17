@@ -209,22 +209,49 @@
   }
   .art-grid {
     columns: 2;
+    column-gap: 8px;
   }
+  .art-item {
+    margin-bottom: 8px;
+  }
+
+  /* Natural document flow on mobile — body scrolls, no nested fixed container */
   .about {
     display: flex;
-    overflow: auto;
-    position: fixed;
-    top: 90px;
-    bottom: 0;
     flex-direction: column;
+    margin-top: 60px;
+  }
+  .about .sidebar-container {
+    order: 1;
+    position: static;
+    overflow: visible;
+    width: 100%;
+    border-right: none;
+    border-top: none;
+    bottom: auto;
   }
   .about .intro-container {
     order: 2;
     position: static;
-    overflow: initial;
-    padding-bottom: 4vh;
+    overflow: visible;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding-top: 2vh;
+    padding-bottom: 8vh;
   }
-  .about .sidebar-container {
-    order: 1;
+
+  .description {
+    padding-top: 3vh;
+  }
+  .bio {
+    font-size: 1.15rem;
+  }
+  .project-heading {
+    font-size: 1.35rem;
+  }
+  .mobile-project-info .project-images img {
+    max-height: none;
+    padding-right: 0;
   }
 }
