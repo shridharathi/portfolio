@@ -1,5 +1,5 @@
 .description {
-  padding-top: 3vh;
+  padding-top: 5vh;
   padding-bottom: 1vh;
   width: 100%;
 }
@@ -39,7 +39,6 @@
   font-weight: bold;
   font-size: 1.3rem;
   color: var(--text-color);
-  letter-spacing: 0.03em;
 }
 
 .section-tabs {
@@ -117,11 +116,11 @@
 }
 
 .project-heading {
-  font-size: 2.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   color: var(--text-color);
-  padding-top: 3vh;
+  padding-top: 2vh;
   margin: 0;
 }
 
