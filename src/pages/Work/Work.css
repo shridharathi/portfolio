@@ -220,6 +220,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 60px;
+    padding: 0 2vw;
   }
   .about .sidebar-container {
     order: 1;
