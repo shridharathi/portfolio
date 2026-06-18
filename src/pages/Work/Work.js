@@ -81,8 +81,7 @@ export default function Work() {
               </div>
               <br />
               <br />
-              <div dangerouslySetInnerHTML={{ __html: work.description }} />
-              <br />
+              <div className="project-desc" dangerouslySetInnerHTML={{ __html: work.description }} />
               <br />
             </div>
 
