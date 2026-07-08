@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: '#1500ff',
-        'body-grey': '#868a8ead',
+        accent: '#6B8E23',
+        'body-grey': '#8B9D6F',
       },
       fontFamily: {
         franklin: ['"Franklin Gothic Medium"', 'Helvetica', 'Arial', 'sans-serif'],
