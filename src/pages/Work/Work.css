@@ -2,6 +2,8 @@
   padding-top: 5vh;
   padding-bottom: 1vh;
   width: 100%;
+  border-top: 1px solid;
+  border-top-color: rgba(0, 212, 255, 0.1);
 }
 
 .stack {
@@ -39,7 +41,10 @@
 .section-header {
   font-weight: bold;
   font-size: 1.3rem;
-  color: var(--text-color);
+  background: linear-gradient(135deg, var(--chrome-shine), var(--accent), var(--metal-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-family: "Consolas W01 Bold", "Consolas", monospace;
 }
 
@@ -52,21 +57,47 @@
 .tab {
   cursor: pointer;
   opacity: 0.4;
-  transition: opacity 0.2s ease;
+  transition: all 0.3s ease;
   padding-bottom: 1vh;
+  position: relative;
+}
+
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transition: width 0.3s ease;
 }
 
 .tab:hover {
   opacity: 0.7;
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+}
+
+.tab:hover::after {
+  width: 100%;
 }
 
 .active-tab {
   opacity: 1;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.active-tab::after {
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent), transparent);
 }
 
 .projects-header {
   padding-bottom: 1vh;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(0, 212, 255, 0.2);
 }
 
 .pt-5 {
@@ -78,7 +109,8 @@
   flex-wrap: wrap;
   gap: 0.4vh 2vw;
   padding: 1.4vh 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(0, 212, 255, 0.15);
   margin-bottom: 2.5vh;
 }
 
@@ -87,27 +119,49 @@
   cursor: pointer;
   color: var(--body-grey-lighter);
   font-size: 0.88rem;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
+  position: relative;
+}
+
+.project-links p::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transition: width 0.3s ease;
 }
 
 .project-links p:hover {
-  color: var(--text-color);
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
 }
 
-.selected-project {
-  color: var(--text-color) !important;
-  font-weight: bold;
-}
-
-.project-images {
-  transition: all 0.25s ease;
-  display: flex;
+.project-links p:hover::after {
   width: 100%;
 }
 
+.selected-project {
+  color: var(--accent) !important;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.project-images {
+  transition: all 0.3s ease;
+  display: flex;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(192, 192, 192, 0.1);
+}
+
 .project-images:hover {
-  opacity: 0.7;
+  opacity: 0.85;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), inset 0 0 20px rgba(192, 192, 192, 0.15);
 }
 
 .project-images img {
@@ -186,8 +240,10 @@
   left: calc(33% + 3.6vw);
   right: 2.2vw;
   bottom: 0;
-  background: var(--bg-color);
-  transition: background 0.2s ease;
+  background: linear-gradient(180deg, rgba(13, 17, 23, 0.7) 0%, rgba(15, 19, 32, 0.8) 100%);
+  backdrop-filter: blur(3px);
+  transition: all 0.2s ease;
+  box-shadow: inset 1px 0 0 rgba(0, 212, 255, 0.1);
 }
 
 /* Art masonry grid */
@@ -206,6 +262,14 @@
 .art-item img {
   width: 100%;
   display: block;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+}
+
+.art-item img:hover {
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.35), inset 0 0 15px rgba(192, 192, 192, 0.1);
+  transform: scale(1.02);
 }
 
 @media screen and (max-width: 768px) {
