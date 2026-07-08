@@ -1,19 +1,28 @@
 .sidebar-container {
-  border-right: 1px solid var(--border-color);
+  border-right: 3px solid #888888;
   width: 32%;
   overflow: auto;
   position: fixed;
   top: 90px;
   bottom: 0;
-  background: var(--bg-color);
+  background: var(--metallic-silver);
   transition: background 0.2s ease, border-color 0.2s ease;
+  box-shadow: inset -2px 0 4px rgba(0,0,0,0.1), inset 1px 0 0 rgba(255,255,255,0.8);
 }
 
 .sidebar-item {
   width: 98%;
-  border-bottom: 1px solid var(--body-grey-lighter);
-  padding: 2.8vh 0;
+  border-bottom: 2px solid var(--body-grey-lighter);
+  padding: 2.8vh 1vw;
   padding-right: 1vw;
+  background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+  transition: all 0.3s ease;
+}
+
+.sidebar-item:hover {
+  background: var(--metallic-gold);
+  border-bottom-color: #d4af37;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
 .sidebar-item:last-child {
