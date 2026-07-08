@@ -4,25 +4,35 @@
 
 :root {
   --dark-grey: #434343;
-  --body-grey-lighter: #8b949d;
-  --body-grey: #868a8ead;
-  --accent: #6b8e23;
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --border-color: #000000;
-  --sidebar-bg: #ffffff;
-  --muted-text: #3d3d3d;
+  --body-grey-lighter: #c0c0c0;
+  --body-grey: #a8a9ad;
+  --accent: #ffd700;
+  --bg-color: #f5f5f5;
+  --text-color: #1a1a1a;
+  --border-color: #888888;
+  --sidebar-bg: #f5f5f5;
+  --muted-text: #505050;
+  
+  /* Metallic gradients */
+  --metallic-silver: linear-gradient(135deg, #e8e8e8 0%, #b0b0b0 50%, #e8e8e8 100%);
+  --metallic-gold: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+  --metallic-chrome: linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%, #f0f0f0 100%);
 }
 
 body[data-theme='dark'] {
   --bg-color: #1a1a1a;
-  --text-color: #e8e8e8;
-  --border-color: #444444;
-  --sidebar-bg: #1a1a1a;
-  --body-grey-lighter: #555555;
-  --body-grey: #999999;
-  --muted-text: #aaaaaa;
-  --accent: #9acd32;
+  --text-color: #e0e0e0;
+  --border-color: #4a4a4a;
+  --sidebar-bg: #222222;
+  --body-grey-lighter: #999999;
+  --body-grey: #b0b0b0;
+  --muted-text: #888888;
+  --accent: #ffd700;
+  
+  /* Dark metallic gradients */
+  --metallic-silver: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 50%, #3a3a3a 100%);
+  --metallic-gold: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #b8860b 100%);
+  --metallic-chrome: linear-gradient(90deg, #4a4a4a 0%, #2a2a2a 25%, #1a1a1a 50%, #2a2a2a 75%, #4a4a4a 100%);
 }
 
 * {
@@ -32,10 +42,11 @@ body[data-theme='dark'] {
 body {
   font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
   width: 100%;
-  background-color: var(--bg-color);
+  background: var(--metallic-silver);
   color: var(--text-color);
   margin: 0;
   transition: background-color 0.2s ease, color 0.2s ease;
+  text-shadow: 0 0.5px 1px rgba(255,255,255,0.5);
 }
 
 h1 {
