@@ -6,7 +6,7 @@
   --dark-grey: #434343;
   --body-grey-lighter: #8b949d;
   --body-grey: #868a8ead;
-  --accent: #1500ff;
+  --accent: #6b8e23;
   --bg-color: #ffffff;
   --text-color: #000000;
   --border-color: #000000;
@@ -22,7 +22,7 @@ body[data-theme='dark'] {
   --body-grey-lighter: #555555;
   --body-grey: #999999;
   --muted-text: #aaaaaa;
-  --accent: #4d6fff;
+  --accent: #9ac742;
 }
 
 * {
