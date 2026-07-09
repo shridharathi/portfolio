@@ -18,13 +18,13 @@ export default function Work() {
       >
         <div className="description projects-header">
           <p className="bio">
-            I'm an AI product engineer into data and creative tech.
+            Welcome to the Stanford AI Research Lab. We focus on building cutting-edge intelligent systems and exploring the intersection of AI, creativity, and human-centered technology.
           </p>
           <br />
-          <p className="school">Stanford University</p>
-          <p className="school-degrees">M.S. Computer Science, AI (2024)</p>
-          <p className="school-degrees">B.S. Data Science and Studio Art (2023)</p>
-          <p className="section-header pt-5">EXPERIENCE</p>
+          <p className="school">🎓 Stanford University</p>
+          <p className="school-degrees">Center for AI Research</p>
+          <p className="school-degrees">Palo Alto, California</p>
+          <p className="section-header pt-5">RESEARCH & PARTNERSHIPS</p>
         </div>
       </Sidebar>
 

@@ -9,7 +9,7 @@ export default function Header({ darkMode, onToggleDark }) {
     <header>
       <div className="titles">
         <h1 className="name">
-          <a href="/">Shridhar Athinarayanan</a>
+          <a href="/">🎓 Stanford AI Lab</a>
         </h1>
         <div className="links">
           <a href="mailto:shriathi@stanford.alumni.edu" aria-label="Email">

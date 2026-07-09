@@ -5,18 +5,18 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid;
-  border-image: linear-gradient(90deg, var(--accent), var(--metal-light), var(--accent)) 1;
+  border-image: linear-gradient(90deg, var(--accent), var(--body-grey-lighter), var(--accent)) 1;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, rgba(30, 45, 65, 0.95) 0%, rgba(15, 25, 40, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(245, 241, 237, 0.95) 0%, rgba(250, 247, 244, 0.98) 100%);
   backdrop-filter: blur(10px);
   z-index: 10;
   box-sizing: border-box;
   padding: 0 2.2vw;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15), inset 0 1px 0 rgba(192, 192, 192, 0.3);
+  box-shadow: 0 8px 32px rgba(140, 21, 56, 0.1), inset 0 1px 0 rgba(212, 197, 184, 0.3);
 }
 
 .titles {
@@ -29,12 +29,12 @@ header {
   font-size: 1.3rem;
   padding-right: 3vw;
   margin: 0;
-  background: linear-gradient(135deg, var(--chrome-shine), var(--accent), var(--metal-light));
+  background: linear-gradient(135deg, var(--accent), var(--metal-dark), var(--metal-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-  filter: drop-shadow(0 0 3px rgba(0, 212, 255, 0.2));
+  text-shadow: 0 0 20px rgba(140, 21, 56, 0.2);
+  filter: drop-shadow(0 0 3px rgba(140, 21, 56, 0.15));
 }
 
 .name a {
@@ -53,7 +53,7 @@ header {
   text-decoration: none;
   position: relative;
   transition: all 0.3s ease;
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+  text-shadow: 0 0 10px rgba(140, 21, 56, 0.15);
 }
 
 .links a::before {
@@ -69,8 +69,8 @@ header {
 
 .links a:hover {
   color: var(--accent);
-  text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
-  filter: drop-shadow(0 0 4px rgba(0, 212, 255, 0.4));
+  text-shadow: 0 0 15px rgba(140, 21, 56, 0.5);
+  filter: drop-shadow(0 0 4px rgba(140, 21, 56, 0.3));
 }
 
 .links a:hover::before {
@@ -78,8 +78,8 @@ header {
 }
 
 .dark-toggle {
-  background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(0, 212, 255, 0.1));
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: linear-gradient(135deg, rgba(212, 197, 184, 0.2), rgba(140, 21, 56, 0.1));
+  border: 1px solid rgba(140, 21, 56, 0.3);
   cursor: pointer;
   color: var(--text-color);
   padding: 6px 10px;
@@ -87,13 +87,13 @@ header {
   line-height: 1;
   border-radius: 6px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 212, 255, 0.1);
+  box-shadow: 0 0 10px rgba(140, 21, 56, 0.1);
 }
 
 .dark-toggle:hover {
-  background: linear-gradient(135deg, rgba(192, 192, 192, 0.3), rgba(0, 212, 255, 0.2));
+  background: linear-gradient(135deg, rgba(212, 197, 184, 0.3), rgba(140, 21, 56, 0.2));
   border-color: var(--accent);
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3), inset 0 0 10px rgba(192, 192, 192, 0.1);
+  box-shadow: 0 0 15px rgba(140, 21, 56, 0.25), inset 0 0 10px rgba(212, 197, 184, 0.1);
   color: var(--accent);
 }
 

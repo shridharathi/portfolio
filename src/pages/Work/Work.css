@@ -3,7 +3,7 @@
   padding-bottom: 1vh;
   width: 100%;
   border-top: 1px solid;
-  border-top-color: rgba(0, 212, 255, 0.1);
+  border-top-color: rgba(140, 21, 56, 0.1);
 }
 
 .stack {
@@ -41,7 +41,7 @@
 .section-header {
   font-weight: bold;
   font-size: 1.3rem;
-  background: linear-gradient(135deg, var(--chrome-shine), var(--accent), var(--metal-light));
+  background: linear-gradient(135deg, var(--accent), var(--metal-dark), var(--metal-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,7 +76,7 @@
 .tab:hover {
   opacity: 0.7;
   color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  text-shadow: 0 0 8px rgba(140, 21, 56, 0.3);
 }
 
 .tab:hover::after {
@@ -86,7 +86,7 @@
 .active-tab {
   opacity: 1;
   color: var(--accent);
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  text-shadow: 0 0 10px rgba(140, 21, 56, 0.4);
 }
 
 .active-tab::after {
@@ -97,7 +97,7 @@
 .projects-header {
   padding-bottom: 1vh;
   border-bottom: 1px solid;
-  border-bottom-color: rgba(0, 212, 255, 0.2);
+  border-bottom-color: rgba(140, 21, 56, 0.15);
 }
 
 .pt-5 {
