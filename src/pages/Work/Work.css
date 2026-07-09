@@ -5,7 +5,10 @@
 }
 
 .stack {
-  color: var(--muted-text);
+  color: #d946a6;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 1vh;
 }
 
 .experience-container {
