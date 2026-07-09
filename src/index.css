@@ -64,4 +64,5 @@ p, ul {
 #root {
   min-height: 100vh;
   width: 100%;
+  transform: rotate(180deg);
 }
