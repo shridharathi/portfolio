@@ -4,16 +4,22 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 3px solid var(--border-color);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: var(--bg-color);
+  background: linear-gradient(90deg, #FFE5F0 0%, #FFF0E5 25%, #FFFFF0 50%, #E5F0FF 75%, #FFE5F0 100%);
   z-index: 10;
   box-sizing: border-box;
   padding: 0 2.2vw;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 0, 110, 0.2);
+}
+
+header[data-theme='dark'] {
+  background: linear-gradient(90deg, #2d0a1a 0%, #2d1a0a 25%, #1a1a0a 50%, #0a1a2d 75%, #2d0a1a 100%);
+  box-shadow: 0 4px 12px rgba(255, 0, 110, 0.4);
 }
 
 .titles {
@@ -29,7 +35,10 @@ header {
 }
 
 .name a {
-  color: var(--text-color);
+  background: linear-gradient(90deg, #FF006E, #FB5607, #FFBE0B, #8338EC, #3A86FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
 }
 
@@ -42,10 +51,27 @@ header {
   margin-right: 18px;
   color: var(--text-color);
   text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.links a::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF006E, #FB5607, #FFBE0B, #8338EC, #3A86FF);
+  transition: width 0.3s ease;
+}
+
+.links a:hover::before {
+  width: 100%;
 }
 
 .links a:hover {
-  opacity: 0.6;
+  color: var(--text-color);
 }
 
 .dark-toggle {
@@ -56,10 +82,17 @@ header {
   padding: 4px 8px;
   font-size: 1rem;
   line-height: 1;
+  transition: all 0.3s ease;
+  animation: rainbowPulse 2s ease-in-out infinite;
 }
 
 .dark-toggle:hover {
-  opacity: 0.6;
+  filter: saturate(1.5) brightness(1.1);
+}
+
+@keyframes rainbowPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 
 @media screen and (max-width: 768px) {

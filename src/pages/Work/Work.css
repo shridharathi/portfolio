@@ -39,7 +39,10 @@
 .section-header {
   font-weight: bold;
   font-size: 1.3rem;
-  color: var(--text-color);
+  background: linear-gradient(90deg, #FF006E, #FB5607, #FFBE0B, #8338EC, #3A86FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-family: "Consolas W01 Bold", "Consolas", monospace;
 }
 
@@ -52,16 +55,24 @@
 .tab {
   cursor: pointer;
   opacity: 0.4;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
   padding-bottom: 1vh;
+  position: relative;
 }
 
 .tab:hover {
   opacity: 0.7;
+  color: var(--accent);
 }
 
 .active-tab {
   opacity: 1;
+  background: linear-gradient(90deg, #FF006E, #FB5607, #FFBE0B, #8338EC, #3A86FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  border-bottom: 3px solid var(--accent);
 }
 
 .projects-header {
@@ -126,7 +137,10 @@
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--text-color);
+  background: linear-gradient(90deg, #FF006E, #FB5607, #FFBE0B, #8338EC, #3A86FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   padding-top: 2vh;
   margin: 0;
 }
@@ -186,7 +200,7 @@
   left: calc(33% + 3.6vw);
   right: 2.2vw;
   bottom: 0;
-  background: var(--bg-color);
+  background: transparent;
   transition: background 0.2s ease;
 }
 

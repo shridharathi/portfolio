@@ -3,26 +3,26 @@
 @import url(https://db.onlinewebfonts.com/c/c694bf4d912ab7e408892e78151645d8?family=Consolas+W01+Bold&display=swap);
 
 :root {
-  --dark-grey: #434343;
-  --body-grey-lighter: #8b949d;
-  --body-grey: #868a8ead;
-  --accent: #1500ff;
+  --dark-grey: #FF006E;
+  --body-grey-lighter: #FB5607;
+  --body-grey: #FFBE0B;
+  --accent: #8338EC;
   --bg-color: #ffffff;
   --text-color: #000000;
-  --border-color: #000000;
+  --border-color: #FF006E;
   --sidebar-bg: #ffffff;
-  --muted-text: #3d3d3d;
+  --muted-text: #FF006E;
 }
 
 body[data-theme='dark'] {
-  --bg-color: #1a1a1a;
-  --text-color: #e8e8e8;
-  --border-color: #444444;
-  --sidebar-bg: #1a1a1a;
-  --body-grey-lighter: #555555;
-  --body-grey: #999999;
-  --muted-text: #aaaaaa;
-  --accent: #4d6fff;
+  --bg-color: #0a0a0a;
+  --text-color: #FFD60A;
+  --border-color: #FF006E;
+  --sidebar-bg: #0a0a0a;
+  --body-grey-lighter: #FB5607;
+  --body-grey: #FFBE0B;
+  --muted-text: #8338EC;
+  --accent: #3A86FF;
 }
 
 * {
@@ -32,10 +32,16 @@ body[data-theme='dark'] {
 body {
   font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
   width: 100%;
-  background-color: var(--bg-color);
+  background: linear-gradient(135deg, #ffffff 0%, #FFE5F0 25%, #FFF0E5 50%, #FFFFF0 75%, #E5F0FF 100%);
+  background-attachment: fixed;
   color: var(--text-color);
   margin: 0;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body[data-theme='dark'] {
+  background: linear-gradient(135deg, #0a0a0a 0%, #2d0a1a 25%, #2d1a0a 50%, #1a1a0a 75%, #0a1a2d 100%);
+  background-attachment: fixed;
 }
 
 h1 {
