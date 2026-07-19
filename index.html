@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="public/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Shridhar Athinarayanan — AI product engineer into data and creative tech." />
+
+    <!-- Open Graph / social thumbnail -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shridhar Athinarayanan" />
+    <meta property="og:description" content="AI product engineer into data and creative tech." />
+    <meta property="og:image" content="https://portfolio-nu-eight-84.vercel.app/images/iindex.webp" />
+    <meta property="og:url" content="https://portfolio-nu-eight-84.vercel.app" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shridhar Athinarayanan" />
+    <meta name="twitter:description" content="AI product engineer into data and creative tech." />
+    <meta name="twitter:image" content="https://portfolio-nu-eight-84.vercel.app/images/iindex.webp" />
+
+    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
+    <link rel="dns-prefetch" href="https://db.onlinewebfonts.com" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/a2e0e6ba6f.js" crossorigin="anonymous"></script>
+    <title>Shridhar Athinarayanan</title>
+  </head>
+  <body>
+    <div class="app-root">
+      <header>
+        <div class="titles">
+          <h1 class="name"><a href="./index.html">Shridhar Athinarayanan</a></h1>
+          <div class="links">
+            <a href="mailto:shriathi@stanford.alumni.edu" aria-label="Email"><i class="fa-solid fa-envelope fa-xl"></i></a>
+            <a href="https://www.linkedin.com/in/shridhar-athinarayanan-638493199/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+            <a href="https://github.com/shridharathi" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github fa-xl"></i></a>
+            <a href="https://medium.com/@shridharathi" target="_blank" rel="noreferrer" aria-label="Medium"><i class="fa-brands fa-medium fa-xl"></i></a>
+          </div>
+        </div>
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon fa-lg" id="darkIcon"></i>
+        </button>
+      </header>
+
+      <div class="about work">
+        <div class="sidebar-container">
+          <div class="description projects-header">
+            <p class="bio">I'm an AI product engineer into data and creative tech.</p>
+            <br />
+            <p class="school">Stanford University</p>
+            <p class="school-degrees">M.S. Computer Science, AI (2024)</p>
+            <p class="school-degrees">B.S. Data Science and Studio Art (2023)</p>
+            <p class="section-header pt-5">EXPERIENCE</p>
+          </div>
+          <div id="experienceList"></div>
+        </div>
+
+        <div class="intro-container">
+          <div class="section-tabs projects-header">
+            <p class="section-header tab active-tab" data-view="projects">PROJECTS</p>
+            <p class="section-header tab" data-view="art">ART</p>
+          </div>
+
+          <div id="projectsView">
+            <div class="project-links" id="projectLinks"></div>
+            <div class="projects-container" id="projectsContainer"></div>
+            <div class="mobile-project-info" id="mobileProjectInfo"></div>
+          </div>
+
+          <div id="artView" class="art-grid" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

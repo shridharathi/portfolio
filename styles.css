@@ -1,0 +1,345 @@
+@import url(https://db.onlinewebfonts.com/c/a8d23046bc8d38ee78b38e95ec47f9e5?family=Franklin+Gothic+Medium&display=swap);
+@import url(https://db.onlinewebfonts.com/c/e130d119682ecb567748343bf7f263b0?family=Franklin+Gothic+Book&display=swap);
+@import url(https://db.onlinewebfonts.com/c/c694bf4d912ab7e408892e78151645d8?family=Consolas+W01+Bold&display=swap);
+
+:root {
+  --dark-grey: #434343;
+  --body-grey-lighter: #8b949d;
+  --body-grey: #868a8ead;
+  --accent: #1500ff;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --border-color: #000000;
+  --sidebar-bg: #ffffff;
+  --muted-text: #3d3d3d;
+}
+
+body[data-theme='dark'] {
+  --bg-color: #1a1a1a;
+  --text-color: #e8e8e8;
+  --border-color: #444444;
+  --sidebar-bg: #1a1a1a;
+  --body-grey-lighter: #555555;
+  --body-grey: #999999;
+  --muted-text: #aaaaaa;
+  --accent: #4d6fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1 { font-size: 1.5rem; }
+
+.heading { font-size: 1.5rem; font-weight: bold; }
+
+.app-root { width: 95%; margin: 0 auto; }
+
+a { color: var(--text-color); text-decoration: none; }
+
+p, ul { margin: 0; }
+
+/* ---------- Header ---------- */
+header {
+  width: 95%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+  background: var(--bg-color);
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 0 2.2vw;
+  transition: background 0.2s ease;
+}
+
+.titles { display: flex; align-items: center; }
+
+.name {
+  font-family: "Consolas W01 Bold", "Consolas", monospace;
+  font-size: 1.3rem;
+  padding-right: 3vw;
+  margin: 0;
+}
+
+.name a { color: var(--text-color); text-decoration: none; }
+
+.links { display: flex; align-items: center; }
+
+.links a { margin-right: 18px; color: var(--text-color); text-decoration: none; }
+
+.links a:hover { opacity: 0.6; }
+
+.dark-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 4px 8px;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.dark-toggle:hover { opacity: 0.6; }
+
+/* ---------- Sidebar ---------- */
+.sidebar-container {
+  border-right: 1px solid var(--border-color);
+  width: 32%;
+  overflow: auto;
+  position: fixed;
+  top: 90px;
+  bottom: 0;
+  background: var(--bg-color);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar-item {
+  width: 98%;
+  border-bottom: 1px solid var(--body-grey-lighter);
+  padding: 2.8vh 0;
+  padding-right: 1vw;
+}
+
+.sidebar-item:last-child { border-bottom: none; }
+
+/* ---------- Work / content ---------- */
+.description {
+  padding-top: 5vh;
+  padding-bottom: 1vh;
+  width: 100%;
+}
+
+.stack { color: var(--muted-text); }
+
+.experience-container { padding-right: 1vw; }
+
+.bio {
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding-bottom: 2vh;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.school {
+  font-size: 0.95rem;
+  font-weight: 400;
+  padding-bottom: 0.4vh;
+  color: var(--text-color);
+}
+
+.school-degrees {
+  font-size: 0.78rem;
+  font-weight: 300;
+  padding-bottom: 0.3vh;
+  color: var(--muted-text);
+  line-height: 1.5;
+  font-family: "Franklin Gothic Book", "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+}
+
+.section-header {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  font-family: "Consolas W01 Bold", "Consolas", monospace;
+}
+
+.section-tabs { display: flex; gap: 2vw; align-items: baseline; }
+
+.tab {
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+  padding-bottom: 1vh;
+}
+
+.tab:hover { opacity: 0.7; }
+
+.active-tab { opacity: 1; }
+
+.projects-header {
+  padding-bottom: 1vh;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pt-5 { padding-top: 5vh; }
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4vh 2vw;
+  padding: 1.4vh 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2.5vh;
+}
+
+.project-links p {
+  margin: 0;
+  cursor: pointer;
+  color: var(--body-grey-lighter);
+  font-size: 0.88rem;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.project-links p:hover { color: var(--text-color); }
+
+.selected-project { color: var(--text-color) !important; font-weight: bold; }
+
+.project-images {
+  transition: all 0.25s ease;
+  display: flex;
+  width: 100%;
+}
+
+.project-images:hover { opacity: 0.7; }
+
+.project-images img {
+  max-height: 560px;
+  padding-right: 1vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-desc {
+  font-family: "Franklin Gothic Book", "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.project-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-color);
+  padding-top: 2vh;
+  margin: 0;
+}
+
+.project-info { display: flex; align-items: baseline; }
+
+.project-info p { margin-right: 20px; }
+
+.mobile-project-info { display: none; padding-top: 1.5vh; }
+
+.experience-description {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  font-weight: normal;
+  font-family: "Franklin Gothic Book", "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding-top: 0.4vh;
+  line-height: 1.45;
+}
+
+.experience-position {
+  color: var(--body-grey);
+  padding-bottom: 0.4vw;
+  margin: 0;
+  padding-top: 0.2vh;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.intro-container {
+  padding-top: 3vh;
+  overflow: auto;
+  position: fixed;
+  top: 90px;
+  left: calc(33% + 3.6vw);
+  right: 2.2vw;
+  bottom: 0;
+  background: var(--bg-color);
+  transition: background 0.2s ease;
+}
+
+/* Art masonry grid */
+.art-grid {
+  columns: 3;
+  column-gap: 10px;
+  padding-top: 2vh;
+  padding-bottom: 4vh;
+}
+
+.art-item { break-inside: avoid; margin-bottom: 10px; }
+
+.art-item img { width: 100%; display: block; }
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 60px;
+    padding: 0 4vw;
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+  .name { font-size: 0.95rem; padding-right: 0; }
+  .links a { margin-right: 12px; }
+  .links a:first-of-type { margin-left: 12px; }
+  .links .fa-xl { font-size: 1.05em; }
+  .dark-toggle { padding: 4px 0 4px 8px; }
+  .dark-toggle .fa-lg { font-size: 1.05em; }
+
+  .sidebar-container {
+    width: 95%;
+    border-right: none;
+    position: static;
+    overflow: initial;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .mobile-project-info { display: flex; flex-direction: column; }
+  .project-links,
+  .projects-container { display: none; }
+  .art-grid { columns: 2; column-gap: 8px; }
+  .art-item { margin-bottom: 8px; }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    padding: 0 2vw;
+  }
+  .about .sidebar-container {
+    order: 1;
+    position: static;
+    overflow: visible;
+    width: 100%;
+    border-right: none;
+    border-top: none;
+    bottom: auto;
+  }
+  .about .intro-container {
+    order: 2;
+    position: static;
+    overflow: visible;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding-top: 2vh;
+    padding-bottom: 8vh;
+  }
+
+  .description { padding-top: 3vh; }
+  .bio { font-size: 1.15rem; }
+  .project-heading { font-size: 1.35rem; }
+  .mobile-project-info .project-images img { max-height: none; padding-right: 0; }
+}

@@ -1,0 +1,165 @@
+const EXPERIENCE = [
+  {
+    name: 'Replicate (acq. Cloudflare)',
+    year: '2025 —',
+    description: 'Shipping the latest AI models.',
+    position: 'Models Engineer',
+    link: 'https://www.replicate.com/',
+  },
+  {
+    name: 'FLORA AI',
+    year: '2024',
+    description: 'Shipped AI tools for creatives.',
+    position: 'AI Product Engineer',
+    link: 'https://www.florafauna.ai/',
+  },
+  {
+    name: 'Autodesk Research',
+    year: '2023',
+    description:
+      'Developed auto-labeling technology for Autodesk Viewer CAD files using finetuned BLIP-2 models.',
+    position: 'Data Acquisition + Machine Learning',
+    link: 'https://medium.com/@shridharathi/employing-pretrained-vision-and-language-models-to-auto-label-cad-files-d872cad2299a',
+  },
+  {
+    name: 'NVIDIA',
+    year: '2021',
+    description:
+      "Contributed to RAPIDS, pandas on the GPU. Accelerated read_csv calls on AWS S3 files by 3.5x using Apache Arrow.",
+    position: 'Data Engineering',
+    link: 'https://medium.com/@shridharathi/speed-up-s3-csv-file-reading-with-apache-arrow-5c0e181e6c58',
+  },
+  {
+    name: 'Stanford FUSE',
+    year: '2020',
+    description:
+      'Digitized the entire water distribution system of Pune, India.',
+    position: 'Data Science',
+    link: 'https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/735906',
+  },
+];
+
+const WORK = [
+  {
+    name: 'index',
+    images: ['iindex.webp'],
+    description:
+      '<p>I built index as a way for people to generate clean, beautiful data visualizations. Users can share them to the social feed, making data a more explorable form of storytelling.</p>',
+    stack: 'React • D3.js • Cloudflare Agents SDK',
+    summary: 'A public feed of data visualizations and charts.',
+    date: '06.2026',
+    link: 'https://iindex.co/',
+  },
+  {
+    name: 'Dojo Notes',
+    images: ['dojonotes.webp'],
+    description:
+      '<p>The linear chat interface has not been iterated on since 2022. Dojo is a visual AI workspace where you can drop in PDFs, websites, videos, and images. Highlight context and ask questions. Share your work.</p>',
+    stack: 'React • Node.js • AI APIs',
+    summary: 'An AI workspace for organizing and querying your knowledge.',
+    date: '05.2026',
+    link: 'https://www.dojonotes.com/',
+  },
+  {
+    name: 'Replicate Agent',
+    images: ['replicate-agent.webp'],
+    description:
+      '<p>A conversational AI agent that generates images, videos, music, and more by chatting with Replicate\'s model library. Powered by Cloudflare Workers and the Agents SDK.</p>',
+    stack: 'Cloudflare Workers • Replicate API • AI SDK',
+    summary: 'Chat-based AI generation agent built on Replicate.',
+    date: '04.2026',
+    link: 'https://agent.replicate.workers.dev/',
+  },
+  {
+    name: 'Image Editing Arena',
+    images: ['arena.webp'],
+    description:
+      '<p>Image Editing Arena is a platform for users to edit images using the latest image models. Powered by Replicate.</p>',
+    stack: 'React • Tailwind CSS • Replicate API',
+    summary: 'Image Editing Arena is a platform for users to edit images using AI.',
+    date: '11.2025',
+    link: 'https://x.com/replicate/status/1993740895989191141/video/1',
+  },
+  {
+    name: 'FLORA: Mobile',
+    images: ['landing.webp', 'loading.webp', 'minecraft.webp'],
+    description:
+      '<p> Developed FLORA\'s mobile landing page which features a realtime AI filter where users can transform their face by typing their own prompts. This is done through a Stream Diffusion pipeline hosted on a Modal container in the backend.</p>',
+    stack: 'React • JavaScript • HTML/CSS • PostgreSQL • Modal • Python',
+    summary:
+      'FLORA is an infinite AI canvas - I made their landing page and am working as a backend engineer',
+    date: '04.2024',
+    link: 'https://florafauna.ai',
+  },
+  {
+    name: 'FLORA: Styles',
+    images: ['loras.webp'],
+    description:
+      '<p>FLORA is the ultimate orchestration layer to plug and play with all the latest AI models. </br> </br>I built styles into the product, allowing users to do style transfers on images using Flux LoRAs. This project involved creating a custom pipeline to load/unload Flux LoRAs on a Modal container along with creating UI components to select and upload LoRAs.</br> <br> Above showcases the styles "Tarot Card", "Victorian Drawing", "Watercolor", "Studio Ghibli", "Retrofuturism", "Pixar", and "Pixel". </br></p>',
+    stack: 'React • JavaScript • HTML/CSS • Modal • Python',
+    summary:
+      'FLORA is an infinite AI canvas - I made their mobile landing page and am working as a backend engineer',
+    date: '04.2024',
+    link: 'https://florafauna.ai',
+  },
+  {
+    name: 'CAD Autolabeling',
+    images: ['captionable-canny.webp'],
+    description:
+      '<p>At Autodesk Research, I developed autolabeling technology for CAD files uploaded to the Autodesk Viewer platform. </br> </br> I learned how to host pre-trained language models (BLIP, BLIP-2, CLIP) using Salesforce Lavis and design experimentation pipelines to finetune them on company data using PyTorch manipulation and LoRA configs. Additionally, I worked with PyTorch DDP to run multiple model replicas in parallel for rapid caption generation.</p>',
+    stack: 'Python • PyTorch • BLIP-2 • CLIP • LoRA finetuning • pandas',
+    summary:
+      'Autolabeling technology for CAD files uploaded to the Autodesk Viewer.',
+    date: '04.2024',
+    link: 'https://medium.com/@shridharathi/employing-pretrained-vision-and-language-models-to-auto-label-cad-files-d872cad2299a/',
+  },
+  {
+    name: 'Art Classifier',
+    images: ['art.webp'],
+    description:
+      '<p>Historical art classification serves as an engaging topic within the digital humanities given the vast, rich visual and textual data involved. Most research has classified art pieces by artist and style, but there is little to no prior work on classification by medium. We utilize various Convolutional Neural Network (CNN) architectures (mostly variations of ResNet) as platforms for experimentation to ultimately develop and fine-tune a high performing medium classification paradigm. Using data from Tate collection involving British artwork from 1500 to the present and models ranging from a rudimentary CNN to ResNet18 paired with data augmentation and frozen gradients, our strongest model obtained an overall test accuracy of 74.9%. We also showcase interesting discussion on binary classification through medium tagging. Ultimately, these results showcase the power of CNNs in medium classification, signifying their abilities of learning representational characteristics of various media</p>',
+    stack: 'Python • Pytorch • numpy • scikit-learn • ResNet18',
+    summary: 'Historical art classification',
+    date: '04.2022',
+    link: 'https://cs231n.stanford.edu/reports/2022/pdfs/135.pdf',
+  },
+  {
+    name: 'Pune Water',
+    images: ['pune.webp', 'pune2.webp'],
+    stack: 'Python • pandas • OpenCV • ArcGIS • Illustrator API',
+    description:
+      "<p>No major city in India has a 24x7 piped water supply system. Pune in Maharashtra, India has plans to be among the first, and yet, it faces a mismatch between available piped water supply and demand for potable water. In this modeling study, we investigate the degree to which Pune’s current intermittent water supply system (IWS) contributes to this. Over 94% of Pune homes are serviced, yet approximately 30-40% of water is lost to leakage and mismanagement under the IWS. This study compares a 24x7 water distribution system (WDS) with an intermittent system to quantify the gains in water supply and changes in equity among different urban users from high-income households to slum-dwellings. Using data supplied by the Pune Municipal Corporation, a hydraulic model of the current WDS was digitized with the Water Network Tool for Resilience (WNTR). EPAnet engine simulations were conducted and alterations to the existing IWS were made to transform the system to a 24x7 water supply model. Our results have implications for water resources planning, management, and climate resiliency as they reveal the tradeoffs and advantages of each type of water distribution system. Quantifying the potential benefits helps municipalities in Pune as they weigh costs of investing in continuous water supply against the inequities which characterize intermittency.</p>",
+    summary: 'Modeling study on water distribution in Pune, India.',
+    date: '04.2020',
+    link: 'https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/735906',
+  },
+];
+
+const ART = [
+  { img: 'still4.webp', title: 'alissa (progress)' },
+  { img: 'parents.webp', title: 'parents' },
+  { img: 'emille.webp', title: 'parents' },
+  { img: 'veg.webp', title: 'veg' },
+  { img: 'alissa.webp', title: 'veg' },
+  { img: 'Piece1.webp', title: 'P' },
+  { img: 'Piece2.webp', title: 'P' },
+  { img: 'Piece3.webp', title: 'P' },
+  { img: 'Piece4.webp', title: 'P' },
+  { img: 'Piece5.webp', title: 'P' },
+  { img: 'Piece8.webp', title: 'P' },
+  { img: 'Piece9.webp', title: 'P' },
+  { img: 'Piece10.webp', title: 'P' },
+  { img: 'Piece11.webp', title: 'P' },
+  { img: 'ally.webp', title: 'P' },
+  { img: 'iago.webp', title: 'P' },
+  { img: 'nft.webp', title: 'P' },
+  { img: 'amma.webp', title: 'P' },
+  { img: 'brent.webp', title: 'P' },
+  { img: 'song.webp', title: 'P' },
+  { img: 'em.webp', title: 'P' },
+  { img: 'self.webp', title: 'P' },
+  { img: 'mango.webp', title: 'P' },
+  { img: 'coke.webp', title: 'P' },
+  { img: 'fka.webp', title: 'P' },
+  { img: 'pear.webp', title: 'P' },
+];
