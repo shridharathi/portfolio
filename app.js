@@ -12,8 +12,12 @@
     toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
   }
 
-  let darkMode = false;
-  try { darkMode = localStorage.getItem('darkMode') === 'true'; } catch (e) {}
+  // default to the dark editorial gallery look
+  let darkMode = true;
+  try {
+    var stored = localStorage.getItem('darkMode');
+    if (stored !== null) darkMode = stored === 'true';
+  } catch (e) {}
   applyTheme(darkMode);
 
   toggle.addEventListener('click', function () {
@@ -108,4 +112,20 @@
       artView.style.display = view === 'art' ? 'block' : 'none';
     });
   });
+
+  /* ---------- Ask bar -> compose email ---------- */
+  const askForm = document.getElementById('askForm');
+  const askInput = document.getElementById('askInput');
+  if (askForm) {
+    askForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const msg = (askInput.value || '').trim();
+      const body = msg ? encodeURIComponent(msg) : '';
+      const href = 'mailto:shriathi@stanford.alumni.edu' +
+        '?subject=' + encodeURIComponent('Hello from your site') +
+        (body ? '&body=' + body : '');
+      window.location.href = href;
+      askInput.value = '';
+    });
+  }
 })();
