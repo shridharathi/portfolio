@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="public/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#DE5E32" />
     <meta name="description" content="Shridhar Athinarayanan — AI product engineer into data and creative tech." />
 
     <!-- Open Graph / social thumbnail -->
@@ -20,8 +20,10 @@
     <meta name="twitter:description" content="AI product engineer into data and creative tech." />
     <meta name="twitter:image" content="https://portfolio-nu-eight-84.vercel.app/images/iindex.webp" />
 
-    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
-    <link rel="dns-prefetch" href="https://db.onlinewebfonts.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="styles.css" />
     <script src="https://kit.fontawesome.com/a2e0e6ba6f.js" crossorigin="anonymous"></script>
     <title>Shridhar Athinarayanan</title>
@@ -32,14 +34,15 @@
         <div class="titles">
           <h1 class="name"><a href="./index.html">Shridhar Athinarayanan</a></h1>
           <div class="links">
-            <a href="mailto:shriathi@stanford.alumni.edu" aria-label="Email"><i class="fa-solid fa-envelope fa-xl"></i></a>
-            <a href="https://www.linkedin.com/in/shridhar-athinarayanan-638493199/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fa-xl"></i></a>
-            <a href="https://github.com/shridharathi" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github fa-xl"></i></a>
-            <a href="https://medium.com/@shridharathi" target="_blank" rel="noreferrer" aria-label="Medium"><i class="fa-brands fa-medium fa-xl"></i></a>
+            <a href="mailto:shriathi@stanford.alumni.edu" aria-label="Email" class="pill-icon-link"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/shridhar-athinarayanan-638493199/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="pill-icon-link"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/shridharathi" target="_blank" rel="noreferrer" aria-label="GitHub" class="pill-icon-link"><i class="fa-brands fa-github"></i></a>
+            <a href="https://medium.com/@shridharathi" target="_blank" rel="noreferrer" aria-label="Medium" class="pill-icon-link"><i class="fa-brands fa-medium"></i></a>
           </div>
         </div>
-        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-          <i class="fa-solid fa-moon fa-lg" id="darkIcon"></i>
+        <button class="dark-toggle pill-btn" id="darkToggle" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon" id="darkIcon"></i>
+          <span id="themeLabel" class="theme-label">Theme</span>
         </button>
       </header>
 
@@ -47,10 +50,11 @@
         <div class="sidebar-container">
           <div class="description projects-header">
             <p class="bio">I'm an AI product engineer into data and creative tech.</p>
-            <br />
-            <p class="school">Stanford University</p>
-            <p class="school-degrees">M.S. Computer Science, AI (2024)</p>
-            <p class="school-degrees">B.S. Data Science and Studio Art (2023)</p>
+            <div class="school-card">
+              <p class="school">Stanford University</p>
+              <p class="school-degrees">M.S. Computer Science, AI (2024)</p>
+              <p class="school-degrees">B.S. Data Science and Studio Art (2023)</p>
+            </div>
             <p class="section-header pt-5">EXPERIENCE</p>
           </div>
           <div id="experienceList"></div>
@@ -58,8 +62,9 @@
 
         <div class="intro-container">
           <div class="section-tabs projects-header">
-            <p class="section-header tab active-tab" data-view="projects">PROJECTS</p>
-            <p class="section-header tab" data-view="art">ART</p>
+            <button class="section-header tab active-tab" data-view="projects">PROJECTS</button>
+            <button class="section-header tab" data-view="analytics">ANALYTICS</button>
+            <button class="section-header tab" data-view="art">ART</button>
           </div>
 
           <div id="projectsView">
@@ -67,6 +72,8 @@
             <div class="projects-container" id="projectsContainer"></div>
             <div class="mobile-project-info" id="mobileProjectInfo"></div>
           </div>
+
+          <div id="analyticsView" class="analytics-view-container" style="display:none"></div>
 
           <div id="artView" class="art-grid" style="display:none"></div>
         </div>
