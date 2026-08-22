@@ -3,26 +3,38 @@
 @import url(https://db.onlinewebfonts.com/c/c694bf4d912ab7e408892e78151645d8?family=Consolas+W01+Bold&display=swap);
 
 :root {
+  /* palette pulled from a spare dorm room:
+     cream walls, navy bedspread, warm wood-brown furniture, grey carpet */
+  --wall: #f2ede2;        /* warm off-white wall */
+  --wall-soft: #e7e0d0;   /* trim / softer cream */
+  --navy: #2b3346;        /* navy bedspread */
+  --navy-deep: #1d2331;
+  --wood: #7a4a2b;        /* warm wood brown */
+  --wood-light: #9c6a44;
+  --carpet: #5a5751;      /* grey-brown carpet */
+
   --dark-grey: #434343;
-  --body-grey-lighter: #8b949d;
-  --body-grey: #868a8ead;
-  --accent: #1500ff;
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --border-color: #000000;
-  --sidebar-bg: #ffffff;
-  --muted-text: #3d3d3d;
+  --body-grey-lighter: #a39b8a;
+  --body-grey: #8f887b;
+  --accent: #7a4a2b;
+  --bg-color: var(--wall);
+  --text-color: #2a2620;
+  --border-color: #2b3346;
+  --sidebar-bg: var(--wall);
+  --muted-text: #6a6355;
 }
 
 body[data-theme='dark'] {
-  --bg-color: #1a1a1a;
-  --text-color: #e8e8e8;
-  --border-color: #444444;
-  --sidebar-bg: #1a1a1a;
-  --body-grey-lighter: #555555;
-  --body-grey: #999999;
-  --muted-text: #aaaaaa;
-  --accent: #4d6fff;
+  --bg-color: #1d2331;      /* deep navy night room */
+  --text-color: #ece6d8;
+  --border-color: #4a5468;
+  --sidebar-bg: #1d2331;
+  --body-grey-lighter: #6d7488;
+  --body-grey: #9aa1b3;
+  --muted-text: #b3ac9c;
+  --accent: #c58a5c;
+  --wood: #c58a5c;
+  --wall-soft: #262d3d;
 }
 
 * { box-sizing: border-box; }
@@ -31,6 +43,9 @@ body {
   font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
   width: 100%;
   background-color: var(--bg-color);
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,0.35), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(43,51,70,0.05), transparent 40%);
   color: var(--text-color);
   margin: 0;
   min-height: 100vh;
@@ -54,7 +69,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
   position: fixed;
   top: 0;
   left: 50%;
@@ -157,6 +172,7 @@ header {
   font-size: 1.3rem;
   color: var(--text-color);
   font-family: "Consolas W01 Bold", "Consolas", monospace;
+  letter-spacing: 0.04em;
 }
 
 .section-tabs { display: flex; gap: 2vw; align-items: baseline; }
@@ -170,11 +186,24 @@ header {
 
 .tab:hover { opacity: 0.7; }
 
-.active-tab { opacity: 1; }
+.active-tab {
+  opacity: 1;
+  color: var(--accent);
+  position: relative;
+}
+.active-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+}
 
 .projects-header {
   padding-bottom: 1vh;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .pt-5 { padding-top: 5vh; }
@@ -199,7 +228,7 @@ header {
 
 .project-links p:hover { color: var(--text-color); }
 
-.selected-project { color: var(--text-color) !important; font-weight: bold; }
+.selected-project { color: var(--accent) !important; font-weight: bold; }
 
 .project-images {
   transition: all 0.25s ease;
@@ -214,6 +243,8 @@ header {
   padding-right: 1vh;
   object-fit: cover;
   width: 100%;
+  border: 1px solid var(--wall-soft);
+  box-shadow: 0 6px 20px rgba(43, 51, 70, 0.12);
 }
 
 .project-desc {
@@ -228,6 +259,7 @@ header {
   color: var(--text-color);
   padding-top: 2vh;
   margin: 0;
+  letter-spacing: 0.02em;
 }
 
 .project-info { display: flex; align-items: baseline; }
@@ -259,6 +291,16 @@ header {
   align-items: baseline;
 }
 
+.experience-header a {
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.experience-header a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 .intro-container {
   padding-top: 3vh;
   overflow: auto;
@@ -281,7 +323,12 @@ header {
 
 .art-item { break-inside: avoid; margin-bottom: 10px; }
 
-.art-item img { width: 100%; display: block; }
+.art-item img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--wall-soft);
+  box-shadow: 0 4px 14px rgba(43, 51, 70, 0.1);
+}
 
 @media screen and (max-width: 768px) {
   header {
