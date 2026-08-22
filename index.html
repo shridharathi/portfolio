@@ -3,76 +3,379 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="public/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Shridhar Athinarayanan — AI product engineer into data and creative tech." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#f5e876" />
+    <meta name="description" content="Discover, Create, Enjoy — Shridhar Athinarayanan Interactive Portfolio & Creative Hub" />
 
-    <!-- Open Graph / social thumbnail -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Shridhar Athinarayanan" />
-    <meta property="og:description" content="AI product engineer into data and creative tech." />
-    <meta property="og:image" content="https://portfolio-nu-eight-84.vercel.app/images/iindex.webp" />
-    <meta property="og:url" content="https://portfolio-nu-eight-84.vercel.app" />
+    <title>Discover, Create, Enjoy</title>
 
-    <!-- Twitter card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Shridhar Athinarayanan" />
-    <meta name="twitter:description" content="AI product engineer into data and creative tech." />
-    <meta name="twitter:image" content="https://portfolio-nu-eight-84.vercel.app/images/iindex.webp" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
-    <link rel="dns-prefetch" href="https://db.onlinewebfonts.com" />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a2e0e6ba6f.js" crossorigin="anonymous"></script>
-    <title>Shridhar Athinarayanan</title>
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="app-root">
-      <header>
-        <div class="titles">
-          <h1 class="name"><a href="./index.html">Shridhar Athinarayanan</a></h1>
-          <div class="links">
-            <a href="mailto:shriathi@stanford.alumni.edu" aria-label="Email"><i class="fa-solid fa-envelope fa-xl"></i></a>
-            <a href="https://www.linkedin.com/in/shridhar-athinarayanan-638493199/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fa-xl"></i></a>
-            <a href="https://github.com/shridharathi" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github fa-xl"></i></a>
-            <a href="https://medium.com/@shridharathi" target="_blank" rel="noreferrer" aria-label="Medium"><i class="fa-brands fa-medium fa-xl"></i></a>
+    <!-- Main Outer Wrapper -->
+    <div class="device-wrapper">
+      <div class="app-screen" id="appScreen">
+        
+        <!-- Top App Bar -->
+        <header class="app-header">
+          <button class="icon-btn back-btn" id="backBtn" aria-label="Go back or reset">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          
+          <span class="header-title" id="headerTitle">Home</span>
+
+          <div class="header-actions">
+            <button class="icon-btn search-btn" id="searchBtn" aria-label="Search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="icon-btn notif-btn" id="notifBtn" aria-label="Notifications">
+              <i class="fa-regular fa-bell"></i>
+              <span class="badge-dot"></span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Main Scrollable Content -->
+        <main class="app-content">
+          
+          <!-- Hero Banner Section -->
+          <section class="hero-section">
+            <h1 class="hero-heading" id="heroHeading">
+              Discover,<br />
+              Create, Enjoy
+            </h1>
+            <p class="hero-subtext" id="heroSubtext">Work hard, play hard</p>
+          </section>
+
+          <!-- Horizontal Action Pills Row -->
+          <div class="action-row">
+            <button class="pill-btn icon-only-pill" id="notesToggleBtn" aria-label="Quick Notes">
+              <i class="fa-regular fa-file-lines"></i>
+            </button>
+            <button class="pill-btn icon-only-pill badge-pill" id="settingsToggleBtn" aria-label="Settings and themes">
+              <i class="fa-solid fa-sliders"></i>
+              <span class="badge-dot badge-pink"></span>
+            </button>
+            <button class="pill-btn dark-pill" id="commentsOpenBtn">
+              <i class="fa-regular fa-comment-dots"></i>
+              <span>Comments</span>
+              <span class="comment-count-badge" id="commentBadge">3</span>
+            </button>
+            <button class="pill-btn outline-pill" id="createBtn">
+              <i class="fa-solid fa-plus"></i>
+              <span>Create new</span>
+            </button>
+          </div>
+
+          <!-- Stacked Interactive Cards Container -->
+          <div class="stacked-cards-container" id="stackedContainer">
+            
+            <!-- Layer 1: Pink Card (Featured / Highlights) -->
+            <div class="stacked-card card-pink" id="cardPink" data-card="pink">
+              <div class="card-tab" onclick="switchCard('pink')">
+                <i class="fa-regular fa-star"></i>
+                <span class="tab-label">Highlights</span>
+              </div>
+              <div class="card-body">
+                <div class="card-header">
+                  <h2 class="card-title">Featured Highlights</h2>
+                  <div class="card-meta-icons">
+                    <button class="card-meta-btn" aria-label="Options"><i class="fa-solid fa-ellipsis"></i></button>
+                    <button class="card-meta-btn" aria-label="Community"><i class="fa-solid fa-fire-flame-curated"></i></button>
+                  </div>
+                </div>
+
+                <div class="card-pills-list">
+                  <div class="pill-item white-highlight-pill" onclick="openDetailModal('replicate')">
+                    <div class="pill-item-left">
+                      <div class="pill-icon-circle"><i class="fa-solid fa-bolt"></i></div>
+                      <span class="pill-item-text">Replicate Models</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right pill-arrow"></i>
+                  </div>
+
+                  <div class="pill-item tint-pill" onclick="openDetailModal('flora')">
+                    <div class="pill-item-left">
+                      <div class="pill-icon-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                      <span class="pill-item-text">FLORA AI Canvas</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right pill-arrow"></i>
+                  </div>
+
+                  <div class="pill-item tint-pill" onclick="openDetailModal('dojo')">
+                    <div class="pill-item-left">
+                      <div class="pill-icon-circle"><i class="fa-solid fa-brain"></i></div>
+                      <span class="pill-item-text">Dojo Knowledge AI</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right pill-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Layer 2: Periwinkle Lavender Card (Work / Projects) -->
+            <div class="stacked-card card-lavender" id="cardLavender" data-card="lavender">
+              <div class="card-tab" onclick="switchCard('lavender')">
+                <i class="fa-solid fa-briefcase"></i>
+                <span class="tab-label">Work & Code</span>
+              </div>
+              <div class="card-body">
+                <div class="card-header">
+                  <h2 class="card-title">Projects & Experience</h2>
+                  <div class="card-meta-icons">
+                    <button class="card-meta-btn" aria-label="Options"><i class="fa-solid fa-ellipsis"></i></button>
+                    <button class="card-meta-btn" aria-label="Experience"><i class="fa-solid fa-graduation-cap"></i></button>
+                  </div>
+                </div>
+
+                <div class="card-pills-list">
+                  <div class="pill-item white-highlight-pill" onclick="openDetailModal('index-viz')">
+                    <div class="pill-item-left">
+                      <div class="pill-icon-circle"><i class="fa-solid fa-chart-pie"></i></div>
+                      <span class="pill-item-text">index Viz Platform</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right pill-arrow"></i>
+                  </div>
+
+                  <div class="pill-item tint-pill" onclick="openDetailModal('cad')">
+                    <div class="pill-item-left">
+                      <div class="pill-icon-circle"><i class="fa-solid fa-cube"></i></div>
+                      <span class="pill-item-text">CAD Autolabeling (Autodesk)</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right pill-arrow"></i>
+                  </div>
+
+                  <div class="pill-item tint-pill" onclick="openDetailModal('nvidia')">
+                    <div class="pill-item-left">
+                      <div class="pill-icon-circle"><i class="fa-solid fa-microchip"></i></div>
+                      <span class="pill-item-text">NVIDIA RAPIDS & S3</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right pill-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Layer 3: Sage Green Card (Events with Friends / Art & Creative) -->
+            <div class="stacked-card card-sage" id="cardSage" data-card="sage">
+              <div class="card-tab" onclick="switchCard('sage')">
+                <i class="fa-solid fa-user-group"></i>
+                <span class="tab-label">Events & Friends</span>
+              </div>
+              <div class="card-body">
+                <div class="card-header">
+                  <h2 class="card-title">Events with Friends</h2>
+                  <div class="card-meta-icons">
+                    <button class="card-meta-btn" aria-label="More options"><i class="fa-solid fa-ellipsis"></i></button>
+                    <button class="card-meta-btn" aria-label="Friends"><i class="fa-solid fa-users"></i></button>
+                  </div>
+                </div>
+
+                <div class="card-pills-list">
+                  <div class="pill-item white-highlight-pill" onclick="openEventsList('dates')">
+                    <div class="pill-item-left">
+                      <div class="pill-icon-circle"><i class="fa-regular fa-calendar-days"></i></div>
+                      <span class="pill-item-text">Check dates</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right pill-arrow"></i>
+                  </div>
+
+                  <div class="pill-item tint-pill" onclick="openEventsList('upcoming')">
+                    <div class="pill-item-left">
+                      <div class="pill-icon-circle"><i class="fa-regular fa-clock"></i></div>
+                      <span class="pill-item-text">Coming soon</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right pill-arrow"></i>
+                  </div>
+
+                  <div class="pill-item tint-pill" onclick="openEventsList('shared')">
+                    <div class="pill-item-left">
+                      <div class="pill-icon-circle"><i class="fa-regular fa-paper-plane"></i></div>
+                      <span class="pill-item-text">Most shared</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right pill-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- /stacked-cards-container -->
+
+          <!-- Dynamic Gallery Preview Section -->
+          <section class="art-preview-section">
+            <div class="section-title-row">
+              <h3>Art & Studio Works</h3>
+              <button class="view-all-btn" id="artGalleryBtn">View All</button>
+            </div>
+            <div class="horizontal-scroll-gallery" id="miniGallery">
+              <!-- Rendered dynamically -->
+            </div>
+          </section>
+
+          <div style="height: 90px;"></div> <!-- Bottom space for notch bar -->
+        </main>
+
+        <!-- Bottom Curved Navigation Notch Bar -->
+        <nav class="bottom-nav-bar">
+          <svg class="notch-svg" viewBox="0 0 375 70" preserveAspectRatio="none">
+            <path d="M 0,16 Q 0,0 16,0 L 128,0 Q 148,0 158,16 A 30,30 0 0,0 217,16 Q 227,0 247,0 L 359,0 Q 375,0 375,16 L 375,70 L 0,70 Z" fill="#18181b"/>
+          </svg>
+
+          <!-- Floating Center Curved Button -->
+          <button class="center-notch-btn" id="centerActionBtn" aria-label="Action center">
+            <i class="fa-solid fa-xmark" id="centerBtnIcon"></i>
+          </button>
+
+          <div class="nav-items-row">
+            <button class="nav-item active" id="navHome" onclick="navigateTo('home')" aria-label="Home">
+              <i class="fa-solid fa-house"></i>
+              <span class="active-dot"></span>
+            </button>
+            <button class="nav-item" id="navFeed" onclick="navigateTo('feed')" aria-label="Activity Feed">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </button>
+            
+            <div class="nav-gap-center"></div>
+
+            <button class="nav-item" id="navSaved" onclick="navigateTo('saved')" aria-label="Saved Items">
+              <i class="fa-regular fa-bookmark"></i>
+            </button>
+            <button class="nav-item" id="navProfile" onclick="navigateTo('profile')" aria-label="Profile">
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </div>
+        </nav>
+
+        <!-- Comments Drawer Slide-up Overlay -->
+        <div class="drawer-overlay" id="commentsDrawer">
+          <div class="drawer-content">
+            <div class="drawer-handle" id="commentsHandle"></div>
+            <div class="drawer-header">
+              <h3>💬 Comments & Vibe Check</h3>
+              <button class="drawer-close" id="closeCommentsBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="comments-list" id="commentsList">
+              <!-- Populated by app.js -->
+            </div>
+
+            <form class="comment-input-form" id="commentForm">
+              <input type="text" id="commentInput" placeholder="Add a sweet comment..." required />
+              <button type="submit" class="comment-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
           </div>
         </div>
-        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-          <i class="fa-solid fa-moon fa-lg" id="darkIcon"></i>
-        </button>
-      </header>
 
-      <div class="about work">
-        <div class="sidebar-container">
-          <div class="description projects-header">
-            <p class="bio">I'm an AI product engineer into data and creative tech.</p>
-            <br />
-            <p class="school">Stanford University</p>
-            <p class="school-degrees">M.S. Computer Science, AI (2024)</p>
-            <p class="school-degrees">B.S. Data Science and Studio Art (2023)</p>
-            <p class="section-header pt-5">EXPERIENCE</p>
+        <!-- Create Event / Item Drawer Slide-up -->
+        <div class="drawer-overlay" id="createDrawer">
+          <div class="drawer-content">
+            <div class="drawer-handle"></div>
+            <div class="drawer-header">
+              <h3>✨ Create New Highlight or Event</h3>
+              <button class="drawer-close" id="closeCreateBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form class="create-form" id="createForm">
+              <div class="form-group">
+                <label>Category</label>
+                <select id="createCategory">
+                  <option value="sage">📅 Events with Friends</option>
+                  <option value="lavender">💼 Projects & Code</option>
+                  <option value="pink">⭐ Highlights</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Title</label>
+                <input type="text" id="createTitle" placeholder="e.g., Weekend AI Hackathon, Art Showcase..." required />
+              </div>
+              <div class="form-group">
+                <label>Description / Details</label>
+                <textarea id="createDesc" rows="3" placeholder="Add details, links, or notes..." required></textarea>
+              </div>
+              <button type="submit" class="submit-pill-btn">Add to Stack ✨</button>
+            </form>
           </div>
-          <div id="experienceList"></div>
         </div>
 
-        <div class="intro-container">
-          <div class="section-tabs projects-header">
-            <p class="section-header tab active-tab" data-view="projects">PROJECTS</p>
-            <p class="section-header tab" data-view="art">ART</p>
+        <!-- Detail Modal Drawer -->
+        <div class="drawer-overlay" id="detailDrawer">
+          <div class="drawer-content">
+            <div class="drawer-handle"></div>
+            <div class="drawer-header">
+              <h3 id="detailModalTitle">Detail Title</h3>
+              <button class="drawer-close" id="closeDetailBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="detail-body" id="detailModalBody">
+              <!-- Populated dynamically -->
+            </div>
           </div>
-
-          <div id="projectsView">
-            <div class="project-links" id="projectLinks"></div>
-            <div class="projects-container" id="projectsContainer"></div>
-            <div class="mobile-project-info" id="mobileProjectInfo"></div>
-          </div>
-
-          <div id="artView" class="art-grid" style="display:none"></div>
         </div>
-      </div>
-    </div>
 
+        <!-- Search Drawer Overlay -->
+        <div class="drawer-overlay" id="searchDrawer">
+          <div class="drawer-content">
+            <div class="drawer-handle"></div>
+            <div class="drawer-header">
+              <h3>🔍 Search Everything</h3>
+              <button class="drawer-close" id="closeSearchBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-field-icon"></i>
+              <input type="text" id="searchInput" placeholder="Search projects, art, events..." />
+            </div>
+            <div class="search-results-list" id="searchResults">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications Popover -->
+        <div class="popover-panel" id="notifPanel">
+          <div class="notif-header">
+            <span>Notifications</span>
+            <button class="notif-clear-btn" id="clearNotifBtn">Clear</button>
+          </div>
+          <div class="notif-items" id="notifList">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Settings Palette Customizer Drawer -->
+        <div class="drawer-overlay" id="settingsDrawer">
+          <div class="drawer-content">
+            <div class="drawer-handle"></div>
+            <div class="drawer-header">
+              <h3>⚙️ Customizer & Preferences</h3>
+              <button class="drawer-close" id="closeSettingsBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="settings-body">
+              <p class="settings-subtitle">Background Theme Palette</p>
+              <div class="theme-palettes">
+                <button class="palette-swatch active" style="background:#f5e876;" data-color="#f5e876" onclick="setAppTheme('#f5e876', 'Butter Yellow')">Butter Yellow</button>
+                <button class="palette-swatch" style="background:#f4c3d8;" data-color="#f4c3d8" onclick="setAppTheme('#f4c3d8', 'Cotton Pink')">Cotton Pink</button>
+                <button class="palette-swatch" style="background:#c2d3f5;" data-color="#c2d3f5" onclick="setAppTheme('#c2d3f5', 'Periwinkle')">Periwinkle</button>
+                <button class="palette-swatch" style="background:#b8d8be;" data-color="#b8d8be" onclick="setAppTheme('#b8d8be', 'Soft Mint')">Soft Mint</button>
+              </div>
+
+              <div class="setting-toggle-row">
+                <span>Tagline Quote</span>
+                <input type="text" id="taglineInput" value="Work hard, play hard" style="padding: 6px 12px; border-radius: 12px; border: 1px solid #ccc; font-family: inherit;" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /app-screen -->
+    </div> <!-- /device-wrapper -->
+
+    <!-- Load Data & Main App Logic -->
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>
