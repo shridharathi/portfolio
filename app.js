@@ -2,110 +2,229 @@
   const IMG_BASE = 'public/images/';
   const ART_BASE = 'public/art/';
 
-  /* ---------- Dark mode ---------- */
-  const toggle = document.getElementById('darkToggle');
-  const icon = document.getElementById('darkIcon');
+  // Set current year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- Dark Mode Toggle ---------- */
+  const toggleBtn = document.getElementById('darkToggle');
+  const iconEl = document.getElementById('darkIcon');
 
   function applyTheme(dark) {
     document.body.setAttribute('data-theme', dark ? 'dark' : 'light');
-    icon.className = dark ? 'fa-solid fa-sun fa-lg' : 'fa-solid fa-moon fa-lg';
-    toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    if (iconEl) {
+      iconEl.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    }
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
   }
 
-  let darkMode = false;
-  try { darkMode = localStorage.getItem('darkMode') === 'true'; } catch (e) {}
-  applyTheme(darkMode);
+  let isDarkMode = false;
+  try {
+    isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+      (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') === null);
+  } catch (e) {}
 
-  toggle.addEventListener('click', function () {
-    darkMode = !darkMode;
-    try { localStorage.setItem('darkMode', String(darkMode)); } catch (e) {}
-    applyTheme(darkMode);
-  });
+  applyTheme(isDarkMode);
 
-  /* ---------- Experience sidebar ---------- */
-  const expList = document.getElementById('experienceList');
-  expList.innerHTML = EXPERIENCE.map(function (exp) {
-    return (
-      '<div class="sidebar-item"><div class="experience-container">' +
-        '<div class="experience-header">' +
-          '<a href="' + exp.link + '" target="_blank" rel="noreferrer">' + exp.name + '</a>' +
-        '</div>' +
-        '<p class="experience-position">' + exp.position + '</p>' +
-        '<p class="experience-description">' + exp.description.replace(/\n/g, '<br>') + '</p>' +
-      '</div></div>'
-    );
-  }).join('');
-
-  /* ---------- Projects ---------- */
-  const idSafe = function (name) { return name.replace(' ', '_'); };
-
-  function projectImages(w) {
-    const width = 100 / w.images.length;
-    return w.images.map(function (img, i) {
-      return '<img src="' + IMG_BASE + img + '" alt="' + w.name + ' number ' + i + '" style="max-width:' + width + '%" />';
-    }).join('');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      isDarkMode = !isDarkMode;
+      try {
+        localStorage.setItem('darkMode', String(isDarkMode));
+      } catch (e) {}
+      applyTheme(isDarkMode);
+    });
   }
 
-  let selected = WORK[0];
+  /* ---------- Projects Logic ---------- */
+  const projectLinksContainer = document.getElementById('projectLinks');
+  const projectDetailContainer = document.getElementById('projectsContainer');
+  const projectCountEl = document.getElementById('projectCount');
 
-  const links = document.getElementById('projectLinks');
-  const container = document.getElementById('projectsContainer');
+  if (projectCountEl) {
+    projectCountEl.textContent = String(WORK.length).padStart(2, '0');
+  }
 
-  function renderLinks() {
-    links.innerHTML = WORK.map(function (w) {
-      return '<p data-name="' + w.name + '" class="' + (w.name === selected.name ? 'selected-project' : '') + '">' + w.name + '</p>';
+  let selectedProject = WORK[0];
+
+  function renderProjectPills() {
+    if (!projectLinksContainer) return;
+    projectLinksContainer.innerHTML = WORK.map(function (w) {
+      const isActive = w.name === selectedProject.name;
+      return (
+        '<button class="project-pill ' + (isActive ? 'active' : '') + '" data-name="' + escapeHtml(w.name) + '">' +
+          '<span>' + escapeHtml(w.name) + '</span>' +
+          '<span class="project-pill-date">' + escapeHtml(w.date) + '</span>' +
+        '</button>'
+      );
     }).join('');
-    Array.prototype.forEach.call(links.querySelectorAll('p'), function (p) {
-      p.addEventListener('click', function () {
-        selected = WORK.find(function (w) { return w.name === p.dataset.name; });
-        renderLinks();
-        renderProject();
+
+    const pills = projectLinksContainer.querySelectorAll('.project-pill');
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        const name = pill.getAttribute('data-name');
+        const found = WORK.find(function (item) { return item.name === name; });
+        if (found) {
+          selectedProject = found;
+          renderProjectPills();
+          renderProjectDetail();
+        }
       });
     });
   }
 
-  function renderProject() {
-    const w = selected;
-    container.innerHTML =
-      '<a href="' + w.link + '" target="_blank" rel="noreferrer" class="project-images">' + projectImages(w) + '</a>' +
-      '<div class="project-info">' +
-        '<p class="heading project-heading" id="' + idSafe(w.name) + '">' + w.name + '</p>' +
-        '<p class="stack">' + w.stack + '</p>' +
-      '</div><br /><br />' +
-      '<div class="project-desc">' + w.description + '</div><br />';
+  function renderProjectDetail() {
+    if (!projectDetailContainer) return;
+    const w = selectedProject;
+    
+    // Parse stack tags
+    const stackTags = w.stack ? w.stack.split('•').map(function (s) {
+      return '<span class="stack-tag">' + escapeHtml(s.trim()) + '</span>';
+    }).join('') : '';
+
+    // Primary image
+    const mainImg = w.images && w.images.length > 0 ? w.images[0] : '';
+    
+    projectDetailContainer.innerHTML =
+      '<div class="project-media-wrapper">' +
+        '<a href="' + escapeHtml(w.link) + '" target="_blank" rel="noreferrer" title="Open ' + escapeHtml(w.name) + '">' +
+          '<img src="' + IMG_BASE + escapeHtml(mainImg) + '" alt="' + escapeHtml(w.name) + ' preview" />' +
+        '</a>' +
+      '</div>' +
+      '<div class="project-info-header">' +
+        '<div class="project-title-area">' +
+          '<h2 class="project-title">' + escapeHtml(w.name) + '</h2>' +
+          '<div class="project-stack-tags">' + stackTags + '</div>' +
+        '</div>' +
+        '<a href="' + escapeHtml(w.link) + '" target="_blank" rel="noreferrer" class="project-external-link">' +
+          '<span>Visit Project</span>' +
+          '<i class="fa-solid fa-arrow-up-right-from-square"></i>' +
+        '</a>' +
+      '</div>' +
+      '<div class="project-description-text">' +
+        w.description +
+      '</div>';
   }
 
-  renderLinks();
-  renderProject();
+  renderProjectPills();
+  renderProjectDetail();
 
-  /* Mobile stacked view */
-  document.getElementById('mobileProjectInfo').innerHTML = WORK.map(function (w) {
-    return (
-      '<div>' +
-        '<a href="' + w.link + '" target="_blank" rel="noreferrer" class="project-images">' + projectImages(w) + '</a>' +
-        '<p class="heading project-heading" id="' + idSafe(w.name) + '">' + w.name + '</p><br />' +
-        '<div>' + w.description + '</div><br /><br />' +
-      '</div>'
-    );
-  }).join('');
+  /* ---------- Experience Logic ---------- */
+  const experienceContainer = document.getElementById('experienceList');
+  if (experienceContainer) {
+    experienceContainer.innerHTML = EXPERIENCE.map(function (exp) {
+      return (
+        '<article class="exp-card">' +
+          '<div class="exp-header-row">' +
+            '<a href="' + escapeHtml(exp.link) + '" target="_blank" rel="noreferrer" class="exp-company">' +
+              '<span>' + escapeHtml(exp.name) + '</span>' +
+              '<i class="fa-solid fa-arrow-up-right-from-square"></i>' +
+            '</a>' +
+            '<span class="exp-year">' + escapeHtml(exp.year) + '</span>' +
+          '</div>' +
+          '<p class="exp-role">' + escapeHtml(exp.position) + '</p>' +
+          '<p class="exp-desc">' + escapeHtml(exp.description).replace(/\n/g, '<br>') + '</p>' +
+        '</article>'
+      );
+    }).join('');
+  }
 
-  /* ---------- Art grid ---------- */
-  document.getElementById('artView').innerHTML = ART.map(function (item) {
-    return '<div class="art-item"><img src="' + ART_BASE + item.img + '" alt="' + item.title + '" loading="lazy" /></div>';
-  }).join('');
+  /* ---------- Art Gallery Logic ---------- */
+  const artContainer = document.getElementById('artGrid');
+  if (artContainer) {
+    artContainer.innerHTML = ART.map(function (art, idx) {
+      return (
+        '<div class="art-card" data-idx="' + idx + '">' +
+          '<img src="' + ART_BASE + escapeHtml(art.img) + '" alt="' + escapeHtml(art.title) + '" loading="lazy" />' +
+          '<div class="art-overlay">' +
+            '<span class="art-title">' + escapeHtml(art.title) + '</span>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
 
-  /* ---------- Tabs ---------- */
-  const tabs = document.querySelectorAll('.tab');
-  const projectsView = document.getElementById('projectsView');
-  const artView = document.getElementById('artView');
+    // Lightbox triggers
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const backdrop = document.querySelector('.lightbox-backdrop');
+
+    function openLightbox(art) {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = ART_BASE + art.img;
+      lightboxImg.alt = art.title;
+      if (lightboxCaption) lightboxCaption.textContent = art.title;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    const artCards = artContainer.querySelectorAll('.art-card');
+    artCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        const idx = parseInt(card.getAttribute('data-idx'), 10);
+        if (ART[idx]) openLightbox(ART[idx]);
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (backdrop) backdrop.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  /* ---------- Tab Navigation Switching ---------- */
+  const tabs = document.querySelectorAll('.pill-tab');
+  const views = {
+    projects: document.getElementById('projectsView'),
+    experience: document.getElementById('experienceView'),
+    art: document.getElementById('artView')
+  };
 
   tabs.forEach(function (tab) {
     tab.addEventListener('click', function () {
-      tabs.forEach(function (t) { t.classList.remove('active-tab'); });
-      tab.classList.add('active-tab');
-      const view = tab.dataset.view;
-      projectsView.style.display = view === 'projects' ? '' : 'none';
-      artView.style.display = view === 'art' ? 'block' : 'none';
+      tabs.forEach(function (t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const targetView = tab.getAttribute('data-view');
+      Object.keys(views).forEach(function (viewKey) {
+        if (views[viewKey]) {
+          if (viewKey === targetView) {
+            views[viewKey].style.display = 'block';
+            views[viewKey].classList.add('active-view');
+          } else {
+            views[viewKey].style.display = 'none';
+            views[viewKey].classList.remove('active-view');
+          }
+        }
+      });
     });
   });
+
+  /* ---------- Helper Utilities ---------- */
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
 })();

@@ -4,72 +4,170 @@
     <meta charset="utf-8" />
     <link rel="icon" href="public/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#121212" />
     <meta name="description" content="Shridhar Athinarayanan — AI product engineer into data and creative tech." />
 
-    <!-- Open Graph / social thumbnail -->
+    <!-- Open Graph / Social Thumbnail -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Shridhar Athinarayanan" />
-    <meta property="og:description" content="AI product engineer into data and creative tech." />
+    <meta property="og:title" content="Shridhar Athinarayanan — AI Product Engineer" />
+    <meta property="og:description" content="AI product engineer into data and creative tech. Stanford MS CS '24." />
     <meta property="og:image" content="https://portfolio-nu-eight-84.vercel.app/images/iindex.webp" />
     <meta property="og:url" content="https://portfolio-nu-eight-84.vercel.app" />
 
-    <!-- Twitter card -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Shridhar Athinarayanan" />
-    <meta name="twitter:description" content="AI product engineer into data and creative tech." />
+    <meta name="twitter:title" content="Shridhar Athinarayanan — AI Product Engineer" />
+    <meta name="twitter:description" content="AI product engineer into data and creative tech. Stanford MS CS '24." />
     <meta name="twitter:image" content="https://portfolio-nu-eight-84.vercel.app/images/iindex.webp" />
 
-    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
-    <link rel="dns-prefetch" href="https://db.onlinewebfonts.com" />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    
+    <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/a2e0e6ba6f.js" crossorigin="anonymous"></script>
-    <title>Shridhar Athinarayanan</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Shridhar Athinarayanan — AI Product Engineer</title>
   </head>
   <body>
-    <div class="app-root">
-      <header>
-        <div class="titles">
-          <h1 class="name"><a href="./index.html">Shridhar Athinarayanan</a></h1>
-          <div class="links">
-            <a href="mailto:shriathi@stanford.alumni.edu" aria-label="Email"><i class="fa-solid fa-envelope fa-xl"></i></a>
-            <a href="https://www.linkedin.com/in/shridhar-athinarayanan-638493199/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fa-xl"></i></a>
-            <a href="https://github.com/shridharathi" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github fa-xl"></i></a>
-            <a href="https://medium.com/@shridharathi" target="_blank" rel="noreferrer" aria-label="Medium"><i class="fa-brands fa-medium fa-xl"></i></a>
-          </div>
+    <!-- Luminous aura gradient background -->
+    <div class="mesh-background" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="grain-overlay"></div>
+    </div>
+
+    <div class="app-container">
+      <!-- Header Bar -->
+      <header class="navbar">
+        <div class="brand">
+          <a href="./index.html" class="brand-logo">SA</a>
+          <span class="brand-divider">/</span>
+          <span class="brand-title">Shridhar Athinarayanan</span>
         </div>
-        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-          <i class="fa-solid fa-moon fa-lg" id="darkIcon"></i>
-        </button>
+
+        <nav class="nav-links">
+          <a href="mailto:shriathi@stanford.alumni.edu" class="social-link" aria-label="Email" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/shridhar-athinarayanan-638493199/" target="_blank" rel="noreferrer" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/shridharathi" target="_blank" rel="noreferrer" class="social-link" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://medium.com/@shridharathi" target="_blank" rel="noreferrer" class="social-link" aria-label="Medium" title="Medium">
+            <i class="fa-brands fa-medium"></i>
+          </a>
+          <button class="theme-toggle-btn" id="darkToggle" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon" id="darkIcon"></i>
+          </button>
+        </nav>
       </header>
 
-      <div class="about work">
-        <div class="sidebar-container">
-          <div class="description projects-header">
-            <p class="bio">I'm an AI product engineer into data and creative tech.</p>
-            <br />
-            <p class="school">Stanford University</p>
-            <p class="school-degrees">M.S. Computer Science, AI (2024)</p>
-            <p class="school-degrees">B.S. Data Science and Studio Art (2023)</p>
-            <p class="section-header pt-5">EXPERIENCE</p>
+      <!-- Main Layout -->
+      <main class="main-content">
+        <!-- Hero Card (Exact aesthetic reference vibe) -->
+        <section class="hero-section">
+          <div class="vibe-card">
+            <div class="portrait-wrapper">
+              <div class="portrait-arch">
+                <img src="src/assets/me.jpg" onerror="this.src='public/art/self.webp'" alt="Shridhar Athinarayanan portrait" class="portrait-img" id="heroPortrait" />
+              </div>
+            </div>
+
+            <div class="vibe-details">
+              <h1 class="vibe-name">Shridhar Athinarayanan</h1>
+              <div class="vibe-tilde">~</div>
+              <p class="vibe-role">AI Product Engineer</p>
+              <p class="vibe-location">San Francisco, CA • Stanford M.S. CS '24</p>
+            </div>
+
+            <div class="vibe-footer">
+              <div class="vibe-stat">
+                <span class="stat-badge"><i class="fa-solid fa-bolt"></i> Models Engineer @ Replicate</span>
+                <span class="stat-sub">AI, Data &amp; Creative Technology</span>
+              </div>
+              <a href="mailto:shriathi@stanford.alumni.edu" class="vibe-action-btn" aria-label="Contact Shridhar" title="Get in touch">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
           </div>
-          <div id="experienceList"></div>
+        </section>
+
+        <!-- Main Content Area with View Switcher -->
+        <section class="content-section">
+          <div class="section-nav-bar">
+            <div class="pill-tabs" role="tablist">
+              <button class="pill-tab active" data-view="projects" role="tab" aria-selected="true">
+                <i class="fa-solid fa-layer-group"></i> Projects
+              </button>
+              <button class="pill-tab" data-view="experience" role="tab" aria-selected="false">
+                <i class="fa-solid fa-briefcase"></i> Experience
+              </button>
+              <button class="pill-tab" data-view="art" role="tab" aria-selected="false">
+                <i class="fa-solid fa-palette"></i> Art Gallery
+              </button>
+            </div>
+          </div>
+
+          <!-- Projects View -->
+          <div id="projectsView" class="view-panel active-view">
+            <div class="projects-layout">
+              <!-- Left project links list -->
+              <div class="project-selector-card">
+                <div class="card-header-sm">
+                  <span>SELECTED WORK</span>
+                  <span class="badge-count" id="projectCount">09</span>
+                </div>
+                <div class="project-pill-list" id="projectLinks"></div>
+              </div>
+
+              <!-- Right project detail showcase -->
+              <div class="project-detail-card" id="projectsContainer">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience View -->
+          <div id="experienceView" class="view-panel" style="display: none;">
+            <div class="experience-grid" id="experienceList">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+
+          <!-- Art Gallery View -->
+          <div id="artView" class="view-panel" style="display: none;">
+            <div class="art-masonry-grid" id="artGrid">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>© <span id="year">2026</span> Shridhar Athinarayanan • Stanford Alumni</p>
+        <div class="footer-links">
+          <a href="https://github.com/shridharathi" target="_blank" rel="noreferrer">GitHub</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/shridhar-athinarayanan-638493199/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <span>•</span>
+          <a href="mailto:shriathi@stanford.alumni.edu">Email</a>
         </div>
+      </footer>
+    </div>
 
-        <div class="intro-container">
-          <div class="section-tabs projects-header">
-            <p class="section-header tab active-tab" data-view="projects">PROJECTS</p>
-            <p class="section-header tab" data-view="art">ART</p>
-          </div>
-
-          <div id="projectsView">
-            <div class="project-links" id="projectLinks"></div>
-            <div class="projects-container" id="projectsContainer"></div>
-            <div class="mobile-project-info" id="mobileProjectInfo"></div>
-          </div>
-
-          <div id="artView" class="art-grid" style="display:none"></div>
-        </div>
+    <!-- Image Lightbox Modal for Art -->
+    <div id="lightbox" class="lightbox-modal" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close modal">&times;</button>
+        <img id="lightboxImg" src="" alt="" />
+        <div id="lightboxCaption" class="lightbox-caption"></div>
       </div>
     </div>
 
