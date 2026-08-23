@@ -12,7 +12,7 @@ header {
   background: var(--bg-color);
   z-index: 10;
   box-sizing: border-box;
-  padding: 0 2.2vw;
+  padding: 0 2.2vw 0 2.5vw;
   transition: background 0.2s ease;
 }
 
@@ -44,6 +44,10 @@ header {
   text-decoration: none;
 }
 
+.links .fa-xl {
+  font-size: 1.2em;
+}
+
 .links a:hover {
   opacity: 0.6;
 }
@@ -62,6 +66,10 @@ header {
   opacity: 0.6;
 }
 
+.dark-toggle .fa-lg {
+  font-size: 1.2em;
+}
+
 @media screen and (max-width: 768px) {
   header {
     height: 60px;
@@ -78,12 +86,12 @@ header {
     margin-left: 12px;
   }
   .links .fa-xl {
-    font-size: 1.05em;
+    font-size: 0.95em;
   }
   .dark-toggle {
     padding: 4px 0 4px 8px;
   }
   .dark-toggle .fa-lg {
-    font-size: 1.05em;
+    font-size: 0.95em;
   }
 }

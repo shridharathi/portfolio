@@ -6,100 +6,24 @@ const ART = [
   
 
   {
-    img: 'still4.webp',
-    title: 'alissa (progress)',
-  },
-  {
-    img: 'parents.webp',
-    title: 'parents',
-  },
-  {
-    img: 'emille.webp',
-    title: 'parents',
-  },
-  {
-    img: 'veg.webp',
-    title: 'veg',
+    img: 'Piece11.webp',
+    title: 'P',
   },
   {
     img: 'alissa.webp',
     title: 'veg',
-  },
-  {
-    img: 'Piece1.webp',
-    title: 'P',
-  },
-  {
-    img: 'Piece2.webp',
-    title: 'P',
-  },
-  {
-    img: 'Piece3.webp',
-    title: 'P',
-  },
-  {
-    img: 'Piece4.webp',
-    title: 'P',
-  },
-  {
-    img: 'Piece5.webp',
-    title: 'P',
-  },
-  {
-    img: 'Piece8.webp',
-    title: 'P',
-  },
-  {
-    img: 'Piece9.webp',
-    title: 'P',
-  },
-  {
-    img: 'Piece10.webp',
-    title: 'P',
-  },
-  {
-    img: 'Piece11.webp',
-    title: 'P',
-  },
-
-  {
-    img: 'ally.webp',
-    title: 'P',
-  },
-  {
-    img: 'iago.webp',
-    title: 'P',
-  },
-  {
-    img: 'nft.webp',
-    title: 'P',
-  },
-  {
-    img: 'amma.webp',
-    title: 'P',
-  },
-  {
-    img: 'brent.webp',
-    title: 'P',
-  },
-  {
-    img: 'song.webp',
-    title: 'P',
+    cropAspectRatio: '1054 / 906',
   },
   {
     img: 'em.webp',
     title: 'P',
   },
   {
-    img: 'self.webp',
-    title: 'P',
+    img: 'parents.webp',
+    title: 'parents',
   },
   {
-    img: 'mango.webp',
-    title: 'P',
-  },
-  {
-    img: 'coke.webp',
+    img: 'Piece4.webp',
     title: 'P',
   },
   {
@@ -107,8 +31,65 @@ const ART = [
     title: 'P',
   },
   {
+    img: 'still4.webp',
+    title: 'alissa (progress)',
+  },
+  {
+    img: 'Piece1.webp',
+    title: 'P',
+  },
+  {
+    img: 'mango.webp',
+    title: 'P',
+  },
+  {
+    img: 'Piece10.webp',
+    title: 'P',
+    cropAspectRatio: '1446 / 1550',
+  },
+  {
+    img: 'ally.webp',
+    title: 'P',
+  },
+  {
+    img: 'veg.webp',
+    title: 'veg',
+  },
+  {
+    img: 'iago.webp',
+    title: 'P',
+  },
+  {
+    img: 'Piece2.webp',
+    title: 'P',
+  },
+  {
     img: 'pear.webp',
     title: 'P',
+  },
+  {
+    img: 'brent.webp',
+    title: 'P',
+  },
+  {
+    img: 'Piece3.webp',
+    title: 'P',
+  },
+  {
+    img: 'coke.webp',
+    title: 'P',
+  },
+  {
+    img: 'Piece5.webp',
+    title: 'P',
+  },
+  {
+    img: 'self.webp',
+    title: 'P',
+  },
+  {
+    img: 'emille.webp',
+    title: 'parents',
   },
 ];
 export default ART;

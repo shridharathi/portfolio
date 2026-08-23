@@ -22,8 +22,8 @@ export default function Work() {
           </p>
           <br />
           <p className="school">Stanford University</p>
-          <p className="school-degrees">M.S. Computer Science, AI (2024)</p>
-          <p className="school-degrees">B.S. Data Science and Studio Art (2023)</p>
+          <p className="school-degrees">M.S. Computer Science, AI</p>
+          <p className="school-degrees">B.S. Data Science and Studio Art</p>
           <p className="section-header pt-5">EXPERIENCE</p>
         </div>
       </Sidebar>
@@ -68,7 +68,12 @@ export default function Work() {
                   <img
                     src={`images/${img}`}
                     alt={`${work.name} number ${index}`}
-                    style={{ maxWidth: `${100 / work.images.length}%` }}
+                    className={work.imageAspectRatio ? 'project-image-fixed' : undefined}
+                    style={{
+                      maxWidth: `${100 / work.images.length}%`,
+                      aspectRatio: work.imageAspectRatio,
+                      objectPosition: work.imageObjectPosition,
+                    }}
                     key={`${work.name}-${index}`}
                   />
                 ))}
@@ -99,7 +104,12 @@ export default function Work() {
                       <img
                         src={`images/${img}`}
                         alt={`${w.name} number ${index}`}
-                        style={{ maxWidth: `${100 / w.images.length}%` }}
+                        className={w.imageAspectRatio ? 'project-image-fixed' : undefined}
+                        style={{
+                          maxWidth: `${100 / w.images.length}%`,
+                          aspectRatio: w.imageAspectRatio,
+                          objectPosition: w.imageObjectPosition,
+                        }}
                         key={`${w.name}-${index}`}
                       />
                     ))}
@@ -120,11 +130,16 @@ export default function Work() {
         {view === 'art' && (
           <div className="art-grid">
             {ART.map((item, index) => (
-              <div key={index} className="art-item">
+              <div
+                key={index}
+                className={`art-item ${item.cropAspectRatio ? 'art-item-cropped' : ''}`}
+                style={item.cropAspectRatio ? { aspectRatio: item.cropAspectRatio } : undefined}
+              >
                 <img
                   src={`art/${item.img}`}
                   alt={item.title}
                   loading="lazy"
+                  className={item.cropAspectRatio ? 'art-image-cropped' : undefined}
                 />
               </div>
             ))}

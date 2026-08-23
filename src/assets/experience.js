@@ -10,7 +10,7 @@ const EXPERIENCE = [
     name: 'FLORA AI',
     year: '2024',
     description: 'Shipped AI tools for creatives.',
-    position: 'AI Product Engineer',
+    position: 'Platform Engineer',
     link: 'https://www.florafauna.ai/',
   },
   {

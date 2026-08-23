@@ -16,20 +16,21 @@
   font-size: 1.25rem;
   font-weight: 500;
   padding-bottom: 2vh;
+  padding-right: 2vw;
   color: var(--text-color);
   line-height: 1.4;
 }
 
 .school {
   font-size: 0.95rem;
-  font-weight: 400;
+  font-weight: 500;
   padding-bottom: 0.4vh;
   color: var(--text-color);
 }
 
 .school-degrees {
   font-size: 0.78rem;
-  font-weight: 300;
+  font-weight: 400;
   padding-bottom: 0.3vh;
   color: var(--muted-text);
   line-height: 1.5;
@@ -77,9 +78,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.4vh 2vw;
-  padding: 1.4vh 0;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 2.5vh;
+  padding: 1.4vh 0 0;
+  border-bottom: none;
+  margin-bottom: 2vh;
 }
 
 .project-links p {
@@ -111,10 +112,15 @@
 }
 
 .project-images img {
-  max-height: 560px;
+  max-height: 800px;
   padding-right: 1vh;
   object-fit: cover;
   width: 100%;
+}
+
+.project-images img.project-image-fixed {
+  aspect-ratio: 1508 / 800;
+  object-position: center top;
 }
 
 .project-desc {
@@ -127,7 +133,7 @@
   font-weight: bold;
   text-transform: uppercase;
   color: var(--text-color);
-  padding-top: 2vh;
+  padding-top: 3vh;
   margin: 0;
 }
 
@@ -148,10 +154,10 @@
 .experience-description {
   font-size: 0.9rem;
   color: var(--muted-text);
-  font-weight: normal;
+  font-weight: 500;
   font-family: "Franklin Gothic Book", "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
   margin: 0;
-  padding-top: 0.4vh;
+  padding-top: 1vh;
   line-height: 1.45;
 }
 
@@ -166,10 +172,12 @@
 }
 
 .experience-position {
-  color: var(--body-grey);
+  color: var(--body-grey-lighter);
   padding-bottom: 0.4vw;
-  margin: 0;
+  margin: 1px 0 0;
   padding-top: 0.2vh;
+  font-weight: 500;
+  font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
 }
 
 .experience-header {
@@ -206,6 +214,16 @@
 .art-item img {
   width: 100%;
   display: block;
+}
+
+.art-item-cropped {
+  overflow: hidden;
+}
+
+.art-item-cropped .art-image-cropped {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
@@ -262,7 +280,7 @@
     font-size: 1.35rem;
   }
   .mobile-project-info .project-images img {
-    max-height: none;
+    max-height: 800px;
     padding-right: 0;
   }
 }

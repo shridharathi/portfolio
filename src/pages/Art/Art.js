@@ -9,26 +9,34 @@ export default function Art() {
       <br />
       <Masonry columns={3} spacing={2} className="!hidden md:!block">
         {ART.map((item, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className={item.cropAspectRatio ? 'overflow-hidden' : undefined}
+            style={item.cropAspectRatio ? { aspectRatio: item.cropAspectRatio } : undefined}
+          >
             <img
               src={`art/${item.img}?w=162&auto=format`}
               srcSet={`art/${item.img}?w=162&auto=format&dpr=2 2x`}
               alt={item.title}
               loading="lazy"
-              className="block w-full"
+              className={`block w-full ${item.cropAspectRatio ? 'h-full object-cover' : ''}`}
             />
           </div>
         ))}
       </Masonry>
       <Masonry columns={1} spacing={2} className="!block md:!hidden">
         {ART.map((item, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className={item.cropAspectRatio ? 'overflow-hidden' : undefined}
+            style={item.cropAspectRatio ? { aspectRatio: item.cropAspectRatio } : undefined}
+          >
             <img
               src={`art/${item.img}?w=162&auto=format`}
               srcSet={`art/${item.img}?w=162&auto=format&dpr=2 2x`}
               alt={item.title}
               loading="lazy"
-              className="block w-full"
+              className={`block w-full ${item.cropAspectRatio ? 'h-full object-cover' : ''}`}
             />
           </div>
         ))}

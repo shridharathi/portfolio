@@ -20,6 +20,10 @@
   border-bottom: none;
 }
 
+body[data-theme='dark'] .sidebar-item {
+  border-bottom-color: var(--border-color);
+}
+
 @media screen and (max-width: 768px) {
   .sidebar-container {
     width: 95%;

@@ -2,6 +2,8 @@ const WORK = [
   {
     name: 'index',
     images: ['iindex.webp'],
+    imageAspectRatio: '1508 / 770',
+    imageObjectPosition: 'center top',
     description:
       '<p>I built index as a way for people to generate clean, beautiful data visualizations. Users can share them to the social feed, making data a more explorable form of storytelling.</p>',
     stack: 'React • D3.js • Cloudflare Agents SDK',
@@ -12,6 +14,8 @@ const WORK = [
   {
     name: 'Dojo Notes',
     images: ['dojonotes.webp'],
+    imageAspectRatio: '1508 / 800',
+    imageObjectPosition: 'center center',
     description:
       '<p>The linear chat interface has not been iterated on since 2022. Dojo is a visual AI workspace where you can drop in PDFs, websites, videos, and images. Highlight context and ask questions. Share your work.</p>',
     stack: 'React • Node.js • AI APIs',
@@ -22,6 +26,8 @@ const WORK = [
   {
     name: 'Replicate Agent',
     images: ['replicate-agent.webp'],
+    imageAspectRatio: '1508 / 800',
+    imageObjectPosition: 'center center',
     description:
       '<p>A conversational AI agent that generates images, videos, music, and more by chatting with Replicate\'s model library. Powered by Cloudflare Workers and the Agents SDK.</p>',
     stack: 'Cloudflare Workers • Replicate API • AI SDK',
@@ -53,6 +59,8 @@ const WORK = [
   {
     name: 'FLORA: Styles',
     images: ['loras.webp'],
+    imageAspectRatio: '1508 / 770',
+    imageObjectPosition: 'center center',
     description:
       '<p>FLORA is the ultimate orchestration layer to plug and play with all the latest AI models. </br> </br>I built styles into the product, allowing users to do style transfers on images using Flux LoRAs. This project involved creating a custom pipeline to load/unload Flux LoRAs on a Modal container along with creating UI components to select and upload LoRAs.</br> <br> Above showcases the styles "Tarot Card", "Victorian Drawing", "Watercolor", "Studio Ghibli", "Retrofuturism", "Pixar", and "Pixel". </br></p>',
     stack: 'React • JavaScript • HTML/CSS • Modal • Python',
