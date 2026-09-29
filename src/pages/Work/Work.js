@@ -20,10 +20,6 @@ export default function Work() {
           <p className="bio">
             I'm an AI product engineer into data and creative tech.
           </p>
-          <br />
-          <p className="school">Stanford University</p>
-          <p className="school-degrees">M.S. Computer Science, AI</p>
-          <p className="school-degrees">B.S. Data Science and Studio Art</p>
           <p className="section-header pt-5">EXPERIENCE</p>
         </div>
       </Sidebar>

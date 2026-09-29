@@ -5,7 +5,7 @@
 }
 
 .stack {
-  color: var(--muted-text);
+  color: var(--body-grey-lighter);
 }
 
 .experience-container {
@@ -32,9 +32,9 @@
   font-size: 0.78rem;
   font-weight: 400;
   padding-bottom: 0.3vh;
-  color: var(--muted-text);
+  color: var(--body-grey-lighter);
   line-height: 1.5;
-  font-family: "Franklin Gothic Book", "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
 }
 
 .section-header {
@@ -67,7 +67,7 @@
 
 .projects-header {
   padding-bottom: 1vh;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid color-mix(in srgb, var(--border-color) 65%, transparent);
 }
 
 .pt-5 {
@@ -124,8 +124,9 @@
 }
 
 .project-desc {
-  font-family: "Franklin Gothic Book", "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
   font-weight: normal;
+  color: var(--muted-text);
 }
 
 .project-heading {
@@ -155,7 +156,7 @@
   font-size: 0.9rem;
   color: var(--muted-text);
   font-weight: 500;
-  font-family: "Franklin Gothic Book", "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
   margin: 0;
   padding-top: 1vh;
   line-height: 1.45;

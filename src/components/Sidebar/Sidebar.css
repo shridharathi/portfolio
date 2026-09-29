@@ -11,7 +11,7 @@
 
 .sidebar-item {
   width: 98%;
-  border-bottom: 1px solid var(--body-grey-lighter);
+  border-bottom: 1px solid color-mix(in srgb, var(--body-grey-lighter) 65%, transparent);
   padding: 2.8vh 0;
   padding-right: 1vw;
 }
@@ -21,7 +21,7 @@
 }
 
 body[data-theme='dark'] .sidebar-item {
-  border-bottom-color: var(--border-color);
+  border-bottom-color: color-mix(in srgb, var(--border-color) 65%, transparent);
 }
 
 @media screen and (max-width: 768px) {
