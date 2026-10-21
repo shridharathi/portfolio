@@ -2,7 +2,7 @@ const EXPERIENCE = [
   {
     name: 'Replicate (acq. Cloudflare)',
     year: '2025 —',
-    description: 'Shipping the latest AI models.',
+    description: 'Shipping models, hacking, and working on the developer platform.',
     position: 'Models Engineer',
     link: 'https://www.replicate.com/',
   },

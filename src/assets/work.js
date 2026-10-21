@@ -1,5 +1,15 @@
 const WORK = [
   {
+    name: 'SLATE',
+    video: 'spotify-redesign.mp4',
+    poster: 'spotify-redesign.jpg',
+    description:
+      '<p>Designers need fast prototypes, with the ability to test different models rapidly. Software is a commodity now, just like any visual asset. Why can\'t it feel like storyboarding?</p>',
+    stack: 'A new IDE for designers',
+    summary: 'A new IDE for designers',
+    date: '10.2026',
+  },
+  {
     name: 'index',
     images: ['iindex.webp'],
     imageAspectRatio: '1508 / 770',
@@ -12,12 +22,34 @@ const WORK = [
     link: 'https://iindex.co/',
   },
   {
+    name: 'Visual Agent',
+    video: 'visual-agent-chat.mp4',
+    poster: 'visual-agent-chat.jpg',
+    description:
+      '<p>Why <em>don\'t</em> we visualize agent thinking?</p>',
+    stack: 'Claude Code prototype',
+    summary: 'A visual interface for watching an AI agent think and make.',
+    date: '10.2026',
+  },
+  {
+    name: 'needle drop recs',
+    images: ['needledrop/landing.png'],
+    imageAspectRatio: '3024 / 1712',
+    imageObjectPosition: 'center center',
+    description:
+      '<p>I\'ve been watching The Needle Drop since I was 12, and I\'ve gotten more music recs from him than Spotify or Apple Music. The conversation around "taste" signifies we\'ll begin to re-value humans who have built-up credibility — artisans — over algorithms in this next digital age.</p><p>This site is a music recommendation engine powered solely by The Needle Drop\'s recs - no ML.</p>',
+    stack: 'Python • JavaScript • Cloudflare Workers • SQLite • Spotify API',
+    summary: 'Discover music from the internet\'s busiest music nerd.',
+    date: '10.2026',
+    link: 'https://www.needledrop-recs.com/',
+  },
+  {
     name: 'Dojo Notes',
     images: ['dojonotes.webp'],
     imageAspectRatio: '1508 / 800',
     imageObjectPosition: 'center center',
     description:
-      '<p>The linear chat interface has not been iterated on since 2022. Dojo is a visual AI workspace where you can drop in PDFs, websites, videos, and images. Highlight context and ask questions. Share your work.</p>',
+      '<p>The linear chat interface has not been iterated on since 2022. Dojo is a visual AI workspace where you can drop in PDFs, websites, videos, and images.</p>',
     stack: 'React • Node.js • AI APIs',
     summary: 'An AI workspace for organizing and querying your knowledge.',
     date: '05.2026',
@@ -25,7 +57,7 @@ const WORK = [
   },
   {
     name: 'Replicate Agent',
-    images: ['replicate-agent.webp'],
+    images: ['replicate-agent-screenshot.png'],
     imageAspectRatio: '1508 / 800',
     imageObjectPosition: 'center center',
     description:
@@ -53,19 +85,6 @@ const WORK = [
     stack: 'React • JavaScript • HTML/CSS • PostgreSQL • Modal • Python',
     summary:
       'FLORA is an infinite AI canvas - I made their landing page and am working as a backend engineer',
-    date: '04.2024',
-    link: 'https://florafauna.ai',
-  },
-  {
-    name: 'FLORA: Styles',
-    images: ['loras.webp'],
-    imageAspectRatio: '1508 / 770',
-    imageObjectPosition: 'center center',
-    description:
-      '<p>FLORA is the ultimate orchestration layer to plug and play with all the latest AI models. </br> </br>I built styles into the product, allowing users to do style transfers on images using Flux LoRAs. This project involved creating a custom pipeline to load/unload Flux LoRAs on a Modal container along with creating UI components to select and upload LoRAs.</br> <br> Above showcases the styles "Tarot Card", "Victorian Drawing", "Watercolor", "Studio Ghibli", "Retrofuturism", "Pixar", and "Pixel". </br></p>',
-    stack: 'React • JavaScript • HTML/CSS • Modal • Python',
-    summary:
-      'FLORA is an infinite AI canvas - I made their mobile landing page and am working as a backend engineer',
     date: '04.2024',
     link: 'https://florafauna.ai',
   },
